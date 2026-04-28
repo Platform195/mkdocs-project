@@ -1,4 +1,0 @@
-# Tagging
-
-Tags are a flexible way to group, filter and report on campaigns or line items.
-For the full walkthrough, see the **Tags Feature Guide**.
