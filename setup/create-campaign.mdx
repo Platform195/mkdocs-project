@@ -4,6 +4,7 @@ description: Create a campaign that mirrors a contract or insertion order.
 ---
 
 import { Ui } from "/snippets/ui.mdx";
+import { Pill } from "/snippets/pill.mdx";
 
 A **Campaign** represents all the components of a sold order — usually mirroring
 a contract, purchase or insertion order with a client.
@@ -12,17 +13,64 @@ a contract, purchase or insertion order with a client.
   <Step title="Open Campaigns">
     Select <Ui>Campaigns</Ui> from the sidebar, then click <Ui>Add campaign</Ui>.
   </Step>
+  <Step title="Choose a campaign type">
+    Select either **Package** or **Custom** — this is the only field you cannot
+    change after saving. See [Package vs Custom](#package-vs-custom) below if
+    you're unsure which to pick.
+  </Step>
   <Step title="Fill in details">
-    Set a <Ui>Sales probability</Ui> (100 = fully sold/closed) if useful, then
-    click <Ui>Save</Ui>.
+    Complete the campaign details. Set <Ui>Sales probability</Ui> (100 = fully
+    sold/closed) if useful. Required fields are marked with a red asterisk **&ast;**.
+    Click <Ui>Save</Ui>.
   </Step>
   <Step title="Edit later as needed">
     Every field except <Ui>Type</Ui> and <Ui>Sales probability</Ui> can be
-    changed from the <Ui>Basic details</Ui> tab.
+    changed from the campaign's <Ui>Basic details</Ui> tab at any time.
   </Step>
 </Steps>
 
+<Warning>
+  **Campaign type cannot be changed after saving.** Choose carefully — if you
+  pick the wrong type you'll need to delete the campaign and start again.
+</Warning>
+
+---
+
+## Package vs Custom
+
+### Package
+
+A **Package** is a predefined grouping of products sold together. When you
+create a Package campaign, Uplift Hub automatically generates the line items
+that make up the package — you don't need to add them manually.
+
+Packages come in two forms:
+
+**Fixed packages** — each product's price is locked. You cannot change the
+overall campaign budget after creation.
+
+**Blended packages** — each product has a percentage weighting of the total
+campaign budget. You can adjust the campaign budget at any time, and each line
+item's value updates automatically based on its weighting.
+
 <Note>
-  **Campaign type** — choose **Package** to auto-populate line items from a
-  predefined product bundle, or **Custom** to build line items individually.
+  **Blended package example** — a two-product campaign with a £400 budget:
+  Product A at 25% = £100, Product B at 75% = £300. Change the budget to £800
+  and it becomes Product A = £200, Product B = £600. The weightings stay fixed;
+  the values flex.
 </Note>
+
+Use a Package when the client is buying a predefined bundle and you want line
+items auto-populated to match.
+
+### Custom
+
+A **Custom** campaign gives you a blank canvas. You add line items individually
+to match the media plan. Use Custom when the sold order is bespoke and doesn't
+map to a predefined package.
+
+<Tip>
+  Not sure which product to select for a line item? Leave a comment on the
+  campaign's <Ui>Comments</Ui> tab. Type **@** followed by a teammate or your
+  Platform 195 representative to notify them directly.
+</Tip>

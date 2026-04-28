@@ -6,28 +6,53 @@ description: Add an advertiser to Uplift Hub — the top of the hierarchy.
 import { Ui } from "/snippets/ui.mdx";
 
 An **Account** is the buying company of a campaign — usually the advertiser.
-It's the top of the Uplift Hub hierarchy; every campaign and line item belongs
-to one.
+It sits at the top of the Uplift Hub hierarchy; every campaign and line item
+belongs to one.
 
 <Steps>
   <Step title="Open Accounts">
-    From the left sidebar, select <Ui>Accounts</Ui>.
+    Select <Ui>Accounts</Ui> from the left sidebar.
   </Step>
   <Step title="Add new account">
     Click <Ui>Add new account</Ui> in the top right.
   </Step>
   <Step title="Fill in details">
-    Enter the account details. Required fields are marked with a red
+    Complete the account details. Required fields are marked with a red
     asterisk **&ast;**. Click <Ui>Create account</Ui> to save.
   </Step>
 </Steps>
 
-<Tip>
-  **Internal IDs** — include account IDs from your internal systems in the
-  account name for easy reference. You can also add multiple IDs in the
-  <Ui>Product IDs</Ui> field.
-</Tip>
-
 <Frame caption="New account form">
   <img src="/images/new-account.png" alt="New account form" />
 </Frame>
+
+---
+
+## Account name
+
+Include any relevant IDs from your internal systems in the account name for
+easy cross-reference. For example: `Boots UK (SF-00123)`.
+
+---
+
+## Product IDs
+
+The **Product IDs** field stores identifiers from your internal systems against
+an account — Salesforce IDs, Xero references, ad-server targeting parameters,
+or anything else you need to look up later. Multiple IDs can be added to a
+single account.
+
+<Tip>
+  Product IDs are visible across campaigns and line items linked to the account,
+  making it easier to reconcile records between Uplift Hub and your other tools.
+</Tip>
+
+---
+
+## After creating an account
+
+Once saved, the account is immediately available to assign campaigns to. Head
+to <Ui>Campaigns</Ui> in the sidebar and click <Ui>Add campaign</Ui> to
+continue setup.
+
+See [Creating a campaign](/setup/create-campaign) for next steps.

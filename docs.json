@@ -71,6 +71,7 @@
             "group": "Creatives",
             "pages": [
               "creatives/add",
+              "creatives/build",
               "creatives/view"
             ]
           },

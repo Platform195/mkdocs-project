@@ -1,0 +1,95 @@
+---
+title: Building creatives
+description: How to build, upload and preview creatives for different product types.
+"x-screens": ["LineItem.Creatives", "Campaign.Creatives"]
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+Creatives are added at the line item level, then rolled up into a read-only
+view at the campaign level. The build process differs slightly depending on
+whether the product uses a **native ad** format or a **fixed-size ad** format.
+
+---
+
+## Step 1 — Open the Creatives tab
+
+<Steps>
+  <Step title="Open the line item">
+    Navigate to the line item from the sidebar <Ui>Line Items</Ui> page or
+    through its parent campaign.
+  </Step>
+  <Step title="Switch to Creatives">
+    Select the <Ui>Creatives</Ui> tab, then click <Ui>Add creative</Ui>.
+  </Step>
+</Steps>
+
+---
+
+## Step 2 — Add your assets
+
+How you fill in the creative depends on the product type.
+
+### Native ads
+
+For native products, enter your assets directly into the **Creative Template**
+fields:
+
+| Field | What to provide |
+|---|---|
+| Headline | Short ad headline |
+| Body copy | Supporting text |
+| Logo | Brand logo file |
+| Image | Hero image at the required dimensions |
+| Click-through URL | Destination page |
+| Tracking script | Third-party impression/click tracker (if applicable) |
+
+### Fixed-size ads
+
+For fixed-size display products, upload your assets under the **Media Assets**
+section:
+
+| Field | What to provide |
+|---|---|
+| Ad files | Completed ad at the correct dimensions (check product spec) |
+| Click-through URL | Destination page |
+| Tracking script | Third-party tracker (if applicable) |
+| Third-party ad tag | Fully hosted tag, if the client is supplying the ad server |
+
+<Note>
+  **File naming** — use clear, descriptive filenames. If you're capturing
+  screenshots or video evidence during the campaign, follow the convention
+  `UH_[LineItemRef]_[SequenceNumber]` (e.g. `UH_US006_001`).
+</Note>
+
+---
+
+## Step 3 — Preview
+
+Once assets are uploaded, use the preview to check the creative renders
+correctly before going live. If a native ad, the preview shows how the ad
+will appear in situ.
+
+---
+
+## Viewing all creatives on a campaign
+
+To see every creative across all line items in one place, open the campaign
+and switch to its <Ui>Creatives</Ui> tab. This is a read-only roll-up — edits
+are made at the line item level.
+
+---
+
+## Who uploads what
+
+<Tip>
+  If the **client** has supplied finished creatives, upload them directly.
+  If **ad design is still required**, the designer uploads the files to the
+  Creatives tab for client approval before go-live.
+</Tip>
+
+<Warning>
+  Creatives must be approved before a line item can be set to
+  <Ui>Ready Live</Ui> or <Ui>Live</Ui>. If assets are missing or unapproved,
+  the line item will not deliver.
+</Warning>

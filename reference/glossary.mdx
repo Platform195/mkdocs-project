@@ -8,53 +8,91 @@ Quick reference for the language used throughout Uplift Hub.
 <AccordionGroup>
   <Accordion title="Account">
     The buying company on a campaign — usually the advertiser. Sits at the top
-    of the Uplift Hub hierarchy.
+    of the Uplift Hub hierarchy. Every campaign and line item belongs to one account.
   </Accordion>
+
   <Accordion title="Ad creative">
     A tab at the campaign and line item levels. Finalised ad creatives are
-    uploaded here.
+    uploaded here. If the client has supplied files, upload them directly. If
+    ad design is still needed, the designer uploads files here for client approval.
   </Accordion>
+
   <Accordion title="Audit">
     A tab at the campaign and line item levels showing a chronological log of
-    every change.
+    every change made to that record — who changed what and when.
   </Accordion>
+
   <Accordion title="Campaign">
     The collection of activity sold under a single contract, purchase or
-    insertion order.
+    insertion order. A campaign is made up of one or more line items.
   </Accordion>
+
   <Accordion title="Evidence">
-    Storage for screenshots of ads in situ — proof a campaign is live or
-    finished.
+    Storage for screenshots of ads in situ — proof that a campaign is live or
+    finished. Found on the **Evidence** tab at the campaign and line item levels.
   </Accordion>
+
   <Accordion title="Line item">
-    The individual rows that make up a campaign — each one mirroring a line on
-    the media plan and exactly one ad product.
+    The individual rows that make up a campaign — each one mirrors a line on
+    the media plan and is associated with exactly one ad product.
   </Accordion>
+
   <Accordion title="Media assets">
     The individual components that make up a finished ad: images, logos, copy,
     click-through URLs, tracking scripts and third-party hosted ad tags.
   </Accordion>
+
   <Accordion title="Pacing">
-    Percentage shown next to live line items in Reporting indicating how
-    on-track delivery is.
+    Shown next to live line items in the **Reporting** view. Pacing is a
+    percentage that tells you how on-track delivery is relative to where it
+    should be at this point in the campaign.
+
+    - **Pacing % higher than Completion %** — delivery has been front-loaded.
+      This is sometimes intentional (e.g. to ensure delivery before a competing
+      campaign starts later in the window).
+    - **Pacing % lower than Completion %** — the line item is at risk of
+      under-delivering by its end date. Raise this with your Platform 195
+      representative as soon as you notice it.
+
+    In most campaigns running to an even delivery schedule, pacing and
+    completion percentages will be roughly equal.
   </Accordion>
+
   <Accordion title="Packages">
-    A predefined grouping of products sold together. Packages can be **fixed**
-    (each product's price is locked) or **blended** (each product's value is a
-    percentage of the campaign budget).
+    A predefined grouping of products sold together. Selecting a Package
+    campaign type auto-populates the line items for you.
+
+    Packages are either **fixed** or **blended**:
+
+    - **Fixed** — each product's price is locked. The campaign budget cannot
+      be changed after creation.
+    - **Blended** — each product has a percentage weighting of the total
+      budget. You can adjust the campaign budget at any time and each line
+      item's value updates automatically.
+
+    **Example:** a blended package with two products — Product A at 25% and
+    Product B at 75% — on a £400 campaign gives Product A £100 and Product B
+    £300. Increase the budget to £800 and it becomes £200 and £600.
   </Accordion>
+
   <Accordion title="Product">
     The individual ad product sold to the advertiser. Each line item is
     associated with exactly one product.
   </Accordion>
+
   <Accordion title="Product ID">
-    Optional field on an account used to record IDs from your internal systems.
+    An optional field on an account used to record identifiers from your
+    internal systems — such as a Salesforce ID, Xero reference, or site
+    targeting parameter. Multiple IDs can be stored against a single account.
   </Accordion>
+
   <Accordion title="Uplift Ads">
     The ad-server engine that delivers on-site ads for Platform 195 clients.
+    Line items delivered via Uplift Ads have automated reporting.
   </Accordion>
+
   <Accordion title="Uplift Ads+">
     Platform 195's audience-extension offering — activates ads across networks
-    including search and social.
+    including search and social media. Also includes automated reporting.
   </Accordion>
 </AccordionGroup>

@@ -1,7 +1,70 @@
 ---
 title: Tagging
-description: Group, filter and report on campaigns or line items.
+description: Group, filter and report on campaigns and line items using tags.
+"x-screens": ["Campaign.Overview", "LineItem.Overview"]
 ---
 
+import { Ui } from "/snippets/ui.mdx";
+
 Tags are a flexible way to group, filter and report on campaigns or line items.
-For the full walkthrough, see the **Tags Feature Guide**.
+You can apply as many tags as you like to any campaign or line item — and
+filter the entire platform by them.
+
+---
+
+## Adding a tag
+
+<Steps>
+  <Step title="Open the campaign or line item">
+    Navigate to the record you want to tag.
+  </Step>
+  <Step title="Find the Tags field">
+    Tags appear in the details panel on the <Ui>Overview</Ui> tab.
+  </Step>
+  <Step title="Type to create or select">
+    Click into the tags field and start typing. Select an existing tag from
+    the dropdown or press <kbd>Enter</kbd> to create a new one.
+  </Step>
+</Steps>
+
+<Tip>
+  Tags are shared across your entire account — a tag you create on one campaign
+  is available to use on any other. Keep names consistent and short.
+</Tip>
+
+---
+
+## Filtering by tag
+
+Once tags are applied you can filter the **Campaigns** and **Line Items** pages
+by one or more tags. Use the filter bar at the top of either page and select
+<Ui>Tag</Ui> from the filter dropdown.
+
+Multiple tags selected = results matching **any** of those tags (OR logic).
+
+---
+
+## Common uses
+
+| Use case | Example tags |
+|---|---|
+| Track campaign phase | `Q1`, `Q2`, `H1-2025` |
+| Mark content type | `video`, `display`, `native` |
+| Flag internal status | `needs-brief`, `pending-approval` |
+| Group by market | `UK`, `DE`, `FR` |
+| Flag special handling | `high-priority`, `vip-client` |
+
+---
+
+## Removing a tag
+
+Click the **×** next to any tag on the campaign or line item to remove it.
+Removing a tag from a record does not delete the tag from the system — it
+remains available for other records.
+
+<Note>
+  Tags cannot currently be renamed or merged in bulk. If a tag name needs
+  correcting, remove it from all records and re-apply with the correct name.
+  Contact [support@uplifthub.io](mailto:support@uplifthub.io) if you need
+  a bulk update.
+</Note>
