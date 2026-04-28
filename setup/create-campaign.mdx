@@ -1,0 +1,28 @@
+---
+title: Creating a campaign
+description: Create a campaign that mirrors a contract or insertion order.
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+A **Campaign** represents all the components of a sold order — usually mirroring
+a contract, purchase or insertion order with a client.
+
+<Steps>
+  <Step title="Open Campaigns">
+    Select <Ui>Campaigns</Ui> from the sidebar, then click <Ui>Add campaign</Ui>.
+  </Step>
+  <Step title="Fill in details">
+    Set a <Ui>Sales probability</Ui> (100 = fully sold/closed) if useful, then
+    click <Ui>Save</Ui>.
+  </Step>
+  <Step title="Edit later as needed">
+    Every field except <Ui>Type</Ui> and <Ui>Sales probability</Ui> can be
+    changed from the <Ui>Basic details</Ui> tab.
+  </Step>
+</Steps>
+
+<Note>
+  **Campaign type** — choose **Package** to auto-populate line items from a
+  predefined product bundle, or **Custom** to build line items individually.
+</Note>

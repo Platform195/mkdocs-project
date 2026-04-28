@@ -1,0 +1,41 @@
+export const Pill = ({ tone = "live", children }) => (
+  <span
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 6,
+      height: 22,
+      padding: "0 8px",
+      borderRadius: 1000,
+      fontSize: 12,
+      fontWeight: 500,
+      letterSpacing: "-0.005em",
+      background: {
+        live: "#ebf7ed",
+        ready: "#eef1fb",
+        draft: "#f7f8f8",
+        paused: "#faeaea",
+        archived: "#f7f8f8",
+      }[tone],
+      color: {
+        live: "#267d36",
+        ready: "#2743a6",
+        draft: "#4f575e",
+        paused: "#c92a2a",
+        archived: "#4f575e",
+      }[tone],
+      border: tone === "draft" || tone === "archived" ? "1px solid #dee2e6" : "none",
+    }}
+  >
+    <span
+      style={{
+        width: 8,
+        height: 8,
+        borderRadius: "50%",
+        background: tone === "draft" ? "transparent" : "currentColor",
+        border: tone === "draft" ? "1.5px solid #6a7178" : "none",
+      }}
+    />
+    {children}
+  </span>
+);

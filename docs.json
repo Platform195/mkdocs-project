@@ -1,0 +1,125 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Uplift Hub",
+  "description": "Getting started, guides and reference for Uplift Hub.",
+  "colors": {
+    "primary": "#031e6b",
+    "light": "#2743a6",
+    "dark": "#020d17"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://docs.uplifthub.io"
+  },
+  "fonts": {
+    "family": "Geist"
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@uplifthub.io"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Uplift Hub",
+      "href": "https://app.uplifthub.io"
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://platform195.com"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "index",
+              "get-started/introduction",
+              "get-started/signing-in",
+              "get-started/navigating"
+            ]
+          },
+          {
+            "group": "Setup",
+            "pages": [
+              "setup/add-account",
+              "setup/create-campaign",
+              "setup/add-line-items"
+            ]
+          },
+          {
+            "group": "Editing line items",
+            "pages": [
+              "line-items/assignees-rates",
+              "line-items/targeting"
+            ]
+          },
+          {
+            "group": "Creatives",
+            "pages": [
+              "creatives/add",
+              "creatives/view"
+            ]
+          },
+          {
+            "group": "Going live",
+            "pages": [
+              "going-live/workflow"
+            ]
+          },
+          {
+            "group": "More actions",
+            "pages": [
+              "more/tagging",
+              "more/campaign-extras",
+              "more/documents",
+              "more/line-item-extras"
+            ]
+          },
+          {
+            "group": "Reporting",
+            "pages": [
+              "reporting/tracking"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/glossary",
+              "reference/support"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "prompt": "Search the docs…"
+  },
+  "seo": {
+    "metatags": {
+      "og:site_name": "Uplift Hub Docs",
+      "og:title": "Uplift Hub Documentation",
+      "og:description": "Getting started, guides and reference for Uplift Hub."
+    },
+    "indexing": "all"
+  }
+}
