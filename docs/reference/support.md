@@ -1,0 +1,5 @@
+# Get help
+
+Stuck on something or want a feature added? Email
+[support@uplifthub.io](mailto:support@uplifthub.io) — your Platform 195
+representative is on the other end.
