@@ -1,0 +1,126 @@
+---
+title: Exporting data
+description: Export accounts, campaigns, and line items to CSV from any list view.
+"x-screens": ["AccountDashboard", "CampaignDashboard", "LineItemDashboard"]
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+Uplift Hub lets you export data to CSV from the **Accounts**, **Campaigns**,
+and **Line Items** list views. Two export options are available on each screen:
+export only what's visible on screen, or export everything in one go.
+
+---
+
+## Export options
+
+| Option | What it exports |
+|---|---|
+| **Export Visible Page** | Only the rows currently displayed on screen — respects any active filters and the current page |
+| **Export All Data** | Every record in the list, across all pages, regardless of filters |
+
+<Note>
+  Both options export as a CSV file that downloads directly to your browser's
+  default download folder.
+</Note>
+
+---
+
+## Exporting from the Accounts list
+
+<Steps>
+  <Step title="Open Accounts">
+    Select <Ui>Accounts</Ui> from the sidebar.
+  </Step>
+  <Step title="Open the export menu">
+    Click the **dropdown arrow** next to the green <Ui>Add Account</Ui> button
+    in the top right. A menu appears with export options alongside the quick-create shortcuts.
+  </Step>
+  <Step title="Choose your export">
+    Select <Ui>Export Visible Page</Ui> or <Ui>Export All Data</Ui>. The CSV
+    downloads immediately.
+  </Step>
+</Steps>
+
+---
+
+## Exporting from the Campaigns list
+
+<Steps>
+  <Step title="Open Campaigns">
+    Select <Ui>Campaigns</Ui> from the sidebar.
+  </Step>
+  <Step title="Open the export menu">
+    Click the **dropdown arrow** next to the green <Ui>Add Campaign</Ui> button
+    in the top right.
+  </Step>
+  <Step title="Choose your export">
+    Select <Ui>Export Visible Data</Ui> or <Ui>Export All Data</Ui>. The CSV
+    downloads immediately.
+  </Step>
+</Steps>
+
+---
+
+## Exporting from the Line Items list
+
+Line items can be exported from two places — the global **Line Items** page,
+or from within an individual **Campaign**.
+
+### From the global Line Items page
+
+<Steps>
+  <Step title="Open Line Items">
+    Select <Ui>Line Items</Ui> from the sidebar.
+  </Step>
+  <Step title="Open the export menu">
+    Click the **dropdown arrow** next to the green <Ui>Add Line Items</Ui>
+    button in the top right.
+  </Step>
+  <Step title="Choose your export">
+    Select <Ui>Export Visible Page</Ui> or <Ui>Export All Data</Ui>.
+  </Step>
+</Steps>
+
+### From within a campaign
+
+<Steps>
+  <Step title="Open the campaign">
+    Navigate to the campaign and scroll down to the **Line Items** section.
+  </Step>
+  <Step title="Open the export menu">
+    Click the **dropdown arrow** next to the <Ui>Add Line Items</Ui> button
+    within the Line Items table.
+  </Step>
+  <Step title="Export">
+    Select <Ui>Export CSV</Ui>. This exports all line items belonging to that
+    campaign only.
+  </Step>
+</Steps>
+
+---
+
+## Filtering before export
+
+If you only need a subset of records, apply filters before exporting and then
+use <Ui>Export Visible Page</Ui>. This lets you export by status, date range,
+account, or any other available filter without exporting your entire dataset.
+
+<Tip>
+  To export a specific set of campaigns — for example, all Live campaigns for
+  a particular account — use the filter bar to narrow the list first, then
+  choose <Ui>Export Visible Data</Ui>.
+</Tip>
+
+---
+
+## What's included in the export
+
+The CSV export includes all columns visible in the list view at the time of
+export. Columns you have hidden will not appear in the file.
+
+<Note>
+  Column visibility is set using the column toggle controls in the toolbar
+  to the left of the <Ui>Add</Ui> button. Adjust which columns are shown
+  before exporting if you need a specific set of fields.
+</Note>
