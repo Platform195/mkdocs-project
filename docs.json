@@ -75,7 +75,8 @@
             "pages": [
               "creatives/add",
               "creatives/build",
-              "creatives/view"
+              "creatives/view",
+              "creatives/preview-links"
             ]
           },
           {
