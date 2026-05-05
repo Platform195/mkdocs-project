@@ -59,7 +59,8 @@
               "setup/add-account",
               "setup/create-campaign",
               "setup/campaign-tabs",
-              "setup/add-line-items"
+              "setup/add-line-items",
+              "setup/line-item-tabs"
             ]
           },
           {
