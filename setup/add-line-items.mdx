@@ -4,32 +4,78 @@ description: Two ways to add line items, plus tips for filling them out.
 ---
 
 import { Ui } from "/snippets/ui.mdx";
+import { Pill } from "/snippets/pill.mdx";
 
-If you selected a **Package** type campaign, line items are generated
-automatically. If you selected **Custom**, you'll add line items individually
-to match the media plan.
+Line items are the individual rows of your media plan — each one sits inside a
+campaign and is associated with exactly one product. If you created a **Package**
+campaign, line items are generated automatically with the right products and
+rates pre-filled; you mainly need to confirm dates and units. If you created a
+**Custom** campaign, you'll add line items individually to match the media plan.
 
 ## Two ways to add a line item
 
-<Steps>
-  <Step title="From inside a campaign">
-    Open a campaign, switch to the <Ui>Line items</Ui> tab and click
-    <Ui>Add new line item</Ui>.
-  </Step>
-  <Step title="From the Line Items page">
-    Select <Ui>Line Items</Ui> in the sidebar, click <Ui>Add new line item</Ui>,
-    and assign it to a campaign from the dropdown.
-  </Step>
-</Steps>
+**From inside a campaign** — open the campaign, scroll to the line items table
+and click <Ui>Add Line Items</Ui>. The campaign is pre-filled automatically.
 
-## Add details
+<Frame caption="Adding a line item from inside a campaign — the campaign field is pre-filled.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/Addlineitem-campaignview.png" alt="Add Line Items button inside a campaign" />
+</Frame>
 
-Provide as much information as possible. Use <Ui>Notes</Ui> for special
-instructions (targeting, prioritisation) and include links to the media plan or
-brief.
+**From the Line Items page** — select <Ui>Line Items</Ui> in the sidebar and
+click <Ui>Add Line Items</Ui> in the top right. You'll need to select the
+campaign from the dropdown in the form.
+
+<Frame caption="Adding a line item from the global Line Items page — you'll need to select the campaign.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/addlineitem-lineitemview.png" alt="Add Line Items button on the Line Items page" />
+</Frame>
+
+---
+
+## Fill in the form
+
+Provide as much detail as possible before saving. The key fields are:
+
+| Field | Notes |
+|---|---|
+| **Campaign** | Pre-filled if you started from a campaign; otherwise select from the dropdown. |
+| **Product** | The ad product being sold. Not sure which to pick? See the tip below. |
+| **Market** | The geographic or audience market this line item targets. |
+| **Start / End date** | The flight dates for this line item. |
+| **Units** | The volume being sold — impressions, clicks, or other unit depending on the product. |
+| **Rate** | The price per unit. |
+| **Pricing model** | How the line item is charged — CPM, CPC, flat fee, etc. |
+
+Use <Ui>Notes</Ui> for any special instructions such as targeting requirements,
+prioritisation, or links to the media plan or brief.
+
+<Frame caption="The line item form — fill in as much detail as possible before saving.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/lineitem+form.png" alt="Line item creation form" />
+</Frame>
 
 <Tip>
-  **Need help choosing a product?** Leave a comment on the campaign's
+  Not sure which product to select? Leave a comment on the campaign's
   <Ui>Comments</Ui> tab. Type **@** followed by a teammate or your Platform 195
-  representative to notify them.
+  representative to notify them directly.
 </Tip>
+
+---
+
+## After saving
+
+A new line item lands in <Pill tone="draft">Draft</Pill> status. It won't
+deliver until it's set to <Pill tone="live">Live</Pill>. Before it can go live
+you'll typically need to:
+
+- Set assignees and confirm rates — see [Assignees & rates](/line-items/assignees-rates)
+- Apply targeting if the product supports it — see [Targeting & forecast](/line-items/targeting)
+- Upload creatives — see [Adding creatives](/creatives/add)
+
+<Frame caption="A newly created line item in Draft status — ready to be filled out before going live.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/newlineitem.png" alt="Newly created line item in Draft status" />
+</Frame>
+
+<Note>
+  For **Package** campaigns, line items are pre-populated with the correct
+  products and rates. Check the dates and units are correct, then proceed to
+  creatives and go-live.
+</Note>
