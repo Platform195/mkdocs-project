@@ -97,7 +97,8 @@
           {
             "group": "Reporting",
             "pages": [
-              "reporting/tracking"
+              "reporting/tracking",
+              "reporting/dashboards"
             ]
           }
         ]

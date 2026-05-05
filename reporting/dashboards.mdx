@@ -1,0 +1,72 @@
+---
+title: Reporting dashboards
+description: An overview of the five reporting dashboards available from the global Reporting section — Campaign Performance, Line Item Performance, Uplift Hub Insights, Performance Dashboard, and Revenue Dashboard.
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+The global **Reporting** section, accessible from the left sidebar, gives you a cross-workspace view of campaign and line item performance. It contains five dashboards, each scoped to a different level of detail. Select **Reporting** from the sidebar and use the tabs across the top to switch between them.
+
+<Note>
+  All five dashboards support filtering and CSV export. The **Vizzly Admin Toolbar** shown at the top of each dashboard is only visible to super admins and is used to configure the dashboard layout — it is not part of the standard user view.
+</Note>
+
+---
+
+## Campaign Performance
+
+A campaign-level summary of delivery across the workspace. The top of the page shows headline KPIs — **Impressions**, **Clicks**, **CTR**, and **Revenue** — aggregated across all campaigns matching your current filters.
+
+Below the KPIs, a line item table lists each line item with its name, start date, end date, goal amount, projected revenue, impressions, clicks, conversions, completions, pacing, and CTR. Further down, a **Time Series Impressions** chart plots impressions delivered against total goal amount over time, and **Campaign Pacing** and **Campaign Completion** progress bars show overall delivery health at a glance.
+
+Use the **Campaign Name** filter — or <Ui>Add filter</Ui> — to narrow the view to a specific campaign.
+
+---
+
+## Line Item Performance
+
+A deep-dive view for a single line item. Search for a line item by name using the filter at the top of the page, and the dashboard populates with two sections.
+
+**Line Item Booking Information** shows the line item's name, start date, end date, goal amount, projected revenue, impressions, and conversions in a summary table.
+
+**Line Item Performance** shows delivery metrics for that line item — **Impressions**, **Clicks**, **CTR**, **Completion**, and **Pacing** — plus a **Time Series Impressions** chart showing impressions delivered vs. total goal amount over the flight period.
+
+---
+
+## Uplift Hub Insights
+
+A workspace-wide analytics overview combining revenue, product, and channel data. The top of the page shows four headline KPIs — **Number of Campaigns**, **Revenue**, **Cost**, and **Profit**.
+
+Below the KPIs, a series of charts and tables give a broader picture of how your business is performing:
+
+- **Revenue by Account Type** — a donut chart breaking revenue down by account type (e.g. Hotel, Tourist Board).
+- **Revenue by Status** — revenue split across campaign statuses (Live, Evidence Ready, Complete, etc.).
+- **Top 5 Accounts** — a bar chart of your highest-revenue accounts by total line item budget.
+- **Top 5 Products by Revenue** — a bar chart of your best-performing products.
+- **Most Popular Channel by Sold Line Items** — which channels have the most line items booked.
+- **Most Popular Platform by Sold Line Items** — which platforms (On-Site, Online Digital, etc.) are most used.
+- **Most Popular Products by Sold Line Items** — a ranked table of products by line items sold.
+
+Use the **Source Market** and **Item Status** filters to focus the view.
+
+---
+
+## Performance Dashboard
+
+A granular, filterable table of line item delivery across the workspace. Each row shows a line item with its start date, end date, status, goal, impressions, pacing, completion, clicks, and CTR. Pacing and completion are colour-coded — making it easy to spot under-delivering line items at a glance.
+
+A rich set of filters is available across the top — Account Type, Platform, Channel, Pacing, Campaign, Account, Product, Campaign Partial Match, By Impressions Delivered, Status, Source Market, Start Date, and End Date — allowing you to slice the data however you need.
+
+<Tip>
+  Use the **Pacing** filter to quickly surface line items that are behind on delivery — filter to low pacing values and combine with the **Status** filter set to `Live` to focus only on active line items at risk.
+</Tip>
+
+---
+
+## Revenue Dashboard
+
+A financial summary of revenue, cost, profit, and margin across the workspace. Four headline KPIs sit at the top — **Revenue**, **Profit**, **Cost**, and **Margin** — followed by a sortable table breaking these figures down by account, with columns for Total Revenue, Total Cost, Total Profit, and Margin.
+
+Two charts provide further context: **Revenue by Status** shows how revenue is distributed across campaign statuses as a horizontal bar chart, and **Time Series Revenue vs Cost** plots total line item budget against total line item fulfilment over time, so you can track how closely actual delivery tracks against booked revenue.
+
+Use the **Date** and **Campaign Status** filters to focus the view on a specific period or pipeline stage.
