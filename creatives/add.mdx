@@ -5,21 +5,27 @@ description: "How to create a new creative on a line item and set it up ready fo
 
 import { Ui } from "/snippets/ui.mdx";
 
-Creatives live at the line item level. Each line item can have multiple creatives — useful when you need different assets for different flight periods or A/B variations. To add a creative, open the line item and switch to its <Ui>Creatives</Ui> tab.
+Creatives live at the line item level. Each line item can have multiple creatives — useful when you need different assets for different flight periods or variations. To add a creative, open the line item and switch to its <Ui>Creatives</Ui> tab.
 
 <Steps>
   <Step title="Open the Creatives tab">
     Navigate to the line item — either from the sidebar <Ui>Line Items</Ui> page
-    or through its parent campaign — then click the <Ui>Creatives</Ui> tab.
+    or through its parent campaign — then click the <Ui>Creatives</Ui> tab. The
+    table shows all existing creatives with their name, status, creative type,
+    date type, and flight dates.
 
-    <Note>Screenshot coming soon.</Note>
+    <Frame caption="The Creatives tab on a line item — each creative shows its name, status, type and dates.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/Creative+Tab.png" alt="Line item Creatives tab showing creative table" />
+    </Frame>
   </Step>
 
   <Step title="Click New Creative">
     Click <Ui>New Creative</Ui> in the top right. A modal opens with the
     creative details form.
 
-    <Note>Screenshot coming soon.</Note>
+    <Frame caption="The New Creative modal — fill in the details before clicking Create creative.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/New+Creative.png" alt="New Creative modal showing name, dates, click URL and template fields" />
+    </Frame>
   </Step>
 
   <Step title="Fill in the details">
@@ -27,11 +33,11 @@ Creatives live at the line item level. Each line item can have multiple creative
 
     | Field | Notes |
     |---|---|
-    | **Creative Name** | A clear, descriptive name — used to identify the creative in lists and the campaign roll-up. |
-    | **Use Line Item Dates** | On by default. The creative inherits its start and end dates from the parent line item. Toggle off to set custom dates instead. |
+    | **Creative Name** | A clear, descriptive name — shown in the creatives table and the campaign roll-up. |
+    | **Use Line Item Dates** | On by default. The creative inherits its start and end dates from the parent line item. Toggle off to set custom dates — the Date type column will show `Default` when inherited, or the custom range when overridden. |
     | **Start / End Date** | Only editable when **Use Line Item Dates** is off. |
     | **Click URL** | The destination page when a user clicks the ad. |
-    | **Creative Template** | The ad template that determines the format and Creative Components fields. Templates are product-specific and built by the Platform 195 support team — contact your account manager if you need a new one. |
+    | **Creative Template** | Determines the format and the Creative Components fields on the detail page. Templates are product-specific and built by the Platform 195 support team — contact your account manager if you need a new one. |
 
     <Warning>
       **Creative Template cannot be changed after saving.** If you select the
