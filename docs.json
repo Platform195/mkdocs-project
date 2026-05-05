@@ -58,6 +58,7 @@
             "pages": [
               "setup/add-account",
               "setup/create-campaign",
+              "setup/campaign-tabs",
               "setup/add-line-items"
             ]
           },
