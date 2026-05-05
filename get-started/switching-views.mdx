@@ -6,30 +6,46 @@ description: "How to switch between Table, Board, and Timeline views on the Camp
 import { Ui } from "/snippets/ui.mdx";
 import { Pill } from "/snippets/pill.mdx";
 
-The **Campaigns** and **Line Items** screens each offer three views — Table, Board, and Timeline — so you can work with your data in the format that suits you best. Your view preference is remembered between sessions.
+The **Campaigns** and **Line Items** screens each offer three views — Table, Board, and Timeline — so you can work with your data in the format that suits you best. Filters work across all three views, and the line items table inside an individual campaign supports all three views too.
 
 <Steps>
   <Step title="Open Campaigns or Line Items">
     Click <Ui>Campaigns</Ui> or <Ui>Line Items</Ui> in the left sidebar. The screen defaults to **Table** view.
-
-    <Note>Screenshot coming soon.</Note>
   </Step>
 
   <Step title="Choose your view">
-    In the top-right corner of the screen, select one of the three view icons:
+    In the top-right corner of the screen, select one of the three view icons.
 
-    - **Table** — a sortable, paginated list. Best for scanning large volumes of records or exporting data.
-    - **Board** — campaigns or line items grouped into columns by status (Upcoming, Briefed, Live, Complete, PCR Ready, Paused). Best for tracking workflow progress at a glance.
-    - **Timeline** — a Gantt-style chart showing each record as a bar across a calendar. Best for visualising flight dates and spotting scheduling conflicts.
+    **Table** — a sortable, paginated list. Best for scanning large volumes of records or exporting data.
 
-    <Note>Screenshot coming soon.</Note>
+    <Frame caption="Table view — sortable columns with status pills and pagination.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/tableview.png" alt="Table view showing campaigns in a sortable list" />
+    </Frame>
+
+    **Board** — campaigns or line items grouped into columns by status (Upcoming, Briefed, Live, Complete, PCR Ready, Paused). Best for tracking workflow progress at a glance.
+
+    <Frame caption="Board view — records grouped into columns by status.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/kanbanview.png" alt="Board view showing status columns" />
+    </Frame>
+
+    **Timeline** — a Gantt-style chart showing each record as a bar across a calendar. Best for visualising flight dates and spotting scheduling conflicts.
+
+    <Frame caption="Timeline view — campaign bars plotted across a calendar with zoom controls.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/timelineview.png" alt="Timeline view showing campaign bars across a calendar" />
+    </Frame>
   </Step>
 
   <Step title="Adjust the Timeline zoom (Timeline view only)">
     When in Timeline view, use the zoom controls in the top-right to switch between <Ui>Week</Ui>, <Ui>Month</Ui>, <Ui>6 Months</Ui>, and <Ui>12 Months</Ui>. Use the <Ui>←</Ui> <Ui>→</Ui> arrows to scroll through time, or click <Ui>today</Ui> to jump back to the current date.
+  </Step>
 
-    <Note>Screenshot coming soon.</Note>
+  <Step title="Apply filters">
+    Use the filter bar to narrow records before or after switching views — filters carry across all three views. This is useful for focusing the Board or Timeline on a specific status, account, or date range without switching back to Table first.
   </Step>
 </Steps>
+
+<Note>
+  The line items table inside an individual campaign supports all three views too. Open any campaign and use the same view icons above the line items table to switch between Table, Board, and Timeline for that campaign's line items.
+</Note>
 
 <Tip>Use **12 Months** in Timeline view to get a full-year picture of campaign flights — useful for spotting gaps or overlaps before planning new activity.</Tip>
