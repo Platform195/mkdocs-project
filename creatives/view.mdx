@@ -1,10 +1,45 @@
 ---
-title: Viewing all creatives
-description: A read-only roll-up of every creative on a campaign.
+title: "Viewing all creatives"
+description: "A campaign-level roll-up of every creative across all line items, with thumbnail previews and quick navigation."
 ---
 
 import { Ui } from "/snippets/ui.mdx";
 
-To see every creative associated with a campaign in one read-only view, open
-the campaign and switch to its <Ui>Creatives</Ui> tab. This rolls up creatives
-from all line items in the campaign.
+The **Creatives** tab on a campaign gives you a bird's-eye view of every creative
+across all line items — grouped by line item, each showing a thumbnail preview
+and active status. It's the fastest way to check creative coverage across a
+campaign at a glance.
+
+<Steps>
+  <Step title="Open the campaign Creatives tab">
+    Navigate to the campaign and click the <Ui>Creatives</Ui> tab. Each line
+    item appears as a collapsible section with a creative count next to its name.
+    Line items with no creatives added yet show an empty state.
+  </Step>
+  <Step title="Review creative status">
+    Each creative card shows a thumbnail preview and its current status —
+    <Ui>Not active</Ui> or active. If no preview is available yet (assets not
+    yet uploaded), the card shows "No preview available" in place of the thumbnail.
+  </Step>
+  <Step title="Navigate to a creative">
+    Click the external link icon on any creative card to open that creative's
+    detail page directly. Use <Ui>Open Line item</Ui> on the right of any
+    section header to jump to the parent line item instead.
+  </Step>
+</Steps>
+
+<Frame caption="The campaign Creatives tab — creatives grouped by line item with thumbnail previews and status.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/creatives-campaign-view.png" alt="Campaign Creatives tab showing line item sections with creative thumbnails" />
+</Frame>
+
+<Note>
+  This view is read-only. To edit a creative — update components, swap assets,
+  or change dates — click through to the creative detail page. See
+  [Building creatives](/creatives/build).
+</Note>
+
+<Tip>
+  Use the <Ui>Public Preview</Ui> button in the top right to generate a
+  shareable preview link for the entire campaign. See
+  [Sharing preview links](/creatives/preview-links).
+</Tip>

@@ -1,12 +1,52 @@
 ---
-title: Adding creatives
-description: Upload creatives to a line item.
+title: "Adding creatives"
+description: "How to create a new creative on a line item and set it up ready for building."
 ---
 
 import { Ui } from "/snippets/ui.mdx";
 
-Add creatives by opening a line item, switching to the <Ui>Creatives</Ui> tab
-and clicking <Ui>Add creative</Ui>.
+Creatives live at the line item level. Each line item can have multiple creatives — useful when you need different assets for different flight periods or A/B variations. To add a creative, open the line item and switch to its <Ui>Creatives</Ui> tab.
 
-For a deeper walkthrough on building and previewing creatives across product
-types, see the **Creative Builds — How To** guide.
+<Steps>
+  <Step title="Open the Creatives tab">
+    Navigate to the line item — either from the sidebar <Ui>Line Items</Ui> page
+    or through its parent campaign — then click the <Ui>Creatives</Ui> tab.
+
+    <Note>Screenshot coming soon.</Note>
+  </Step>
+
+  <Step title="Click New Creative">
+    Click <Ui>New Creative</Ui> in the top right. A modal opens with the
+    creative details form.
+
+    <Note>Screenshot coming soon.</Note>
+  </Step>
+
+  <Step title="Fill in the details">
+    Complete the form before clicking <Ui>Create creative</Ui>:
+
+    | Field | Notes |
+    |---|---|
+    | **Creative Name** | A clear, descriptive name — used to identify the creative in lists and the campaign roll-up. |
+    | **Use Line Item Dates** | On by default. The creative inherits its start and end dates from the parent line item. Toggle off to set custom dates instead. |
+    | **Start / End Date** | Only editable when **Use Line Item Dates** is off. |
+    | **Click URL** | The destination page when a user clicks the ad. |
+    | **Creative Template** | The ad template that determines the format and Creative Components fields. Templates are product-specific and built by the Platform 195 support team — contact your account manager if you need a new one. |
+
+    <Warning>
+      **Creative Template cannot be changed after saving.** If you select the
+      wrong template you'll need to delete the creative and start again.
+    </Warning>
+  </Step>
+
+  <Step title="Create the creative">
+    Click <Ui>Create creative</Ui>. A "Creative Successfully Created" confirmation
+    appears and you land on the creative detail page, ready to add components
+    and assets. See [Building creatives](/creatives/build) for next steps.
+  </Step>
+</Steps>
+
+<Tip>
+  You can add multiple creatives to a single line item — for example, one for
+  the first half of a campaign flight and a refreshed version for the second half.
+</Tip>
