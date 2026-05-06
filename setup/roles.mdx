@@ -1,13 +1,9 @@
 ---
-title: "Client User Roles"
+title: "User Roles"
 description: "An overview of the three client-facing roles in Uplift Hub and what each one can access."
 ---
 
-import { Ui } from "/snippets/ui.mdx";
-
-Uplift Hub includes three roles designed for client-side users — people who work within an advertiser's organisation rather than at Platform 195. Each role is scoped to give clients the right level of access without exposing internal tooling or configuration.
-
-To assign a role, go to **Back Office** → **User Management** → <Ui>Users</Ui> and edit the relevant user.
+Uplift Hub includes three roles designed for client users. Each role is scoped to give the right level of access for different responsibilities within your organisation.
 
 ---
 
@@ -23,7 +19,7 @@ To assign a role, go to **Back Office** → **User Management** → <Ui>Users</U
 
 ## ClientCampaignManager
 
-This role is designed for clients who take an active management role in their campaigns. They can create and configure campaigns, manage line items end-to-end, upload creatives, and access reporting — but they cannot access internal comments or Platform 195 configuration.
+This role is designed for clients who take an active management role in their campaigns. They can create and configure campaigns, manage line items end-to-end, upload creatives, and access reporting — but they cannot access internal comments or administrative configuration.
 
 <AccordionGroup>
 
@@ -92,7 +88,7 @@ This role is designed for clients who take an active management role in their ca
 </AccordionGroup>
 
 <Note>
-  ClientCampaignManager cannot access internal comments (`hub.campaign.comments.internal`) or any Platform 195 administrative configuration.
+  ClientCampaignManager cannot access internal comments (`hub.campaign.comments.internal`) or any administrative configuration.
 </Note>
 
 ---
@@ -262,5 +258,4 @@ This role is designed for client-side sales and account contacts who need visibi
 </AccordionGroup>
 
 <Note>
-  SalesManager shares a similar breadth of access to ClientCampaignManager at the campaign level, but also gains account-level overview and edit access. It is intended for senior client contacts who need cross-account visibility.
-</Note>
+  SalesManager shares a similar breadth of access to ClientCampaignManager at the campaign level, but also gains account-level overview and edit access. It is intended for senior client contacts who need cross-account visibility.</Note>
