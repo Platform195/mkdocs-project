@@ -1,5 +1,5 @@
 ---
-title: "Client User Roles"
+title: "User Roles"
 description: "An overview of the three client-facing roles in Uplift Hub and what each one can access."
 ---
 
@@ -10,7 +10,7 @@ Uplift Hub includes three roles designed for client users. Each role is scoped t
 ## Role summary
 
 | Role | Best for | Key distinction |
-|---|---|---|
+| --- | --- | --- |
 | **ClientCampaignManager** | Client-side campaign leads | Full read/write access across campaigns, line items, and creatives — including adding campaigns and editing settings |
 | **ClientOperativeRole** | Day-to-day client operators | Broad read access and the ability to submit comments and upload creatives, but no destructive or structural actions |
 | **SalesManager** | Client sales and account contacts | Dashboard and reporting visibility with limited write access — focused on oversight rather than operation |
@@ -22,7 +22,6 @@ Uplift Hub includes three roles designed for client users. Each role is scoped t
 This role is designed for clients who take an active management role in their campaigns. They can create and configure campaigns, manage line items end-to-end, upload creatives, and access reporting — but they cannot access internal comments or administrative configuration.
 
 <AccordionGroup>
-
   <Accordion title="Dashboard">
     - `hub.dashboard` — access the main dashboard
     - `hub.dashboard.accounts` — view accounts dashboard
@@ -84,7 +83,6 @@ This role is designed for clients who take an active management role in their ca
     - `hub.resources` — access resources
     - `hub.reporting` — access reporting
   </Accordion>
-
 </AccordionGroup>
 
 <Note>
@@ -98,7 +96,6 @@ This role is designed for clients who take an active management role in their ca
 This role suits clients who need hands-on day-to-day access — uploading creatives, adding comments, and reviewing campaign progress — without the ability to make structural changes like deleting settings or adding new campaigns.
 
 <AccordionGroup>
-
   <Accordion title="Dashboard">
     - `hub.dashboard` — access the main dashboard
     - `hub.dashboard.upcoming` — view upcoming campaigns
@@ -174,7 +171,6 @@ This role suits clients who need hands-on day-to-day access — uploading creati
     - `hub.resources.delete` — delete resources
     - `hub.reporting` — access reporting
   </Accordion>
-
 </AccordionGroup>
 
 <Note>
@@ -188,7 +184,6 @@ This role suits clients who need hands-on day-to-day access — uploading creati
 This role is designed for client-side sales and account contacts who need visibility across campaigns and reporting, without operational control. They can view dashboards, access reporting, and participate in comments, but cannot make structural or destructive changes.
 
 <AccordionGroup>
-
   <Accordion title="Dashboard">
     - `hub.dashboard` — access the main dashboard
     - `hub.dashboard.accounts` — view accounts dashboard
@@ -254,8 +249,8 @@ This role is designed for client-side sales and account contacts who need visibi
     - `hub.resources.delete` — delete resources
     - `hub.reporting` — access reporting
   </Accordion>
-
 </AccordionGroup>
 
 <Note>
-  SalesManager shares a similar breadth of access to ClientCampaignManager at the campaign level, but also gains account-level overview and edit access. It is intended for senior client contacts who need cross-account visibility.</Note>
+  SalesManager shares a similar breadth of access to ClientCampaignManager at the campaign level, but also gains account-level overview and edit access. It is intended for senior client contacts who need cross-account visibility.
+</Note>
