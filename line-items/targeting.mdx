@@ -1,11 +1,79 @@
 ---
-title: Targeting & forecast
-description: Apply targeting and forecast inventory live.
+title: "Targeting & keywords"
+description: "How to apply keyword targeting to a line item and how to get your keyword list set up."
 ---
 
-For line items delivered through **Uplift Ads** with keyword-targeting
-capabilities, a targeting panel appears when you create or edit the line item.
-You — or your Platform 195 representative — can apply targeting criteria and
-forecast the available inventory inside the line item's date range.
+import { Ui } from "/snippets/ui.mdx";
 
-The forecast updates live as you change targeting and date range.
+Keyword targeting lets you serve ads to users based on specific terms — such as destinations, interests, or behaviours — so your ads reach the most relevant audience. Once your keyword list is enabled, you can apply targeting directly on a line item and forecast the available inventory in real time.
+
+---
+
+## Getting keyword targeting enabled
+
+Keyword targeting is not active by default. To enable it, contact your account manager and provide a keyword file as a CSV.
+
+The CSV must follow this structure:
+
+| Column | Description |
+|---|---|
+| **Name** | A human-readable label for the keyword group (e.g. `Destination`, `Destination DE`) |
+| **Key** | The targeting parameter key used by the ad server (e.g. `dest`) |
+| **Value** | The specific value to match against (e.g. `dubai`, `phuket`) |
+
+**Example:**
+
+```csv
+Name,Key,Value
+Destination,dest,dubai
+Destination,dest,abu dhabi
+Destination,dest,ras al khaimah
+Destination,dest,fujairah
+Destination,dest,sharjah
+Destination,dest,maldives
+Destination,dest,sri lanka
+Destination,dest,seychelles
+Destination,dest,bangkok
+Destination,dest,phuket
+Destination,dest,koh samui
+Destination,dest,mauritius
+Destination,dest,bali
+Destination DE,dest,dubai
+Destination DE,dest,abu dhabi
+```
+
+<Tip>
+  You can define multiple keyword groups in a single file. Use the **Name** column to group related values together — for example, separate groups for different markets or languages.
+</Tip>
+
+Once your account manager has processed the file, your keyword groups will appear in the targeting panel on your line items.
+
+---
+
+## Applying targeting to a line item
+
+<Steps>
+  <Step title="Open the line item">
+    Navigate to the line item you want to target — either from the sidebar **Line Items** page or from the parent campaign.
+  </Step>
+  <Step title="Open the targeting panel">
+    On the line item **Overview** tab, scroll down to the **Targeting** section. This panel is only visible on line items delivered through Uplift Ads with keyword targeting enabled on your account.
+  </Step>
+  <Step title="Select your keyword groups">
+    Choose one or more keyword groups from the list. Each group represents a set of values your account manager loaded from your keyword file.
+  </Step>
+  <Step title="Review the forecast">
+    The forecast updates in real time as you select targeting and adjust the line item's date range. Use this to confirm there is sufficient available inventory before saving.
+  </Step>
+  <Step title="Save">
+    Click <Ui>Save Changes</Ui> in the top right to apply the targeting.
+  </Step>
+</Steps>
+
+<Note>
+  Screenshot coming soon.
+</Note>
+
+<Warning>
+  If the **Targeting** section does not appear on your line item, keyword targeting has not yet been enabled for your account. Contact your account manager to get set up.
+</Warning>
