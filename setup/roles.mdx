@@ -1,0 +1,266 @@
+---
+title: "Client User Roles"
+description: "An overview of the three client-facing roles in Uplift Hub and what each one can access."
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+Uplift Hub includes three roles designed for client-side users — people who work within an advertiser's organisation rather than at Platform 195. Each role is scoped to give clients the right level of access without exposing internal tooling or configuration.
+
+To assign a role, go to **Back Office** → **User Management** → <Ui>Users</Ui> and edit the relevant user.
+
+---
+
+## Role summary
+
+| Role | Best for | Key distinction |
+|---|---|---|
+| **ClientCampaignManager** | Client-side campaign leads | Full read/write access across campaigns, line items, and creatives — including adding campaigns and editing settings |
+| **ClientOperativeRole** | Day-to-day client operators | Broad read access and the ability to submit comments and upload creatives, but no destructive or structural actions |
+| **SalesManager** | Client sales and account contacts | Dashboard and reporting visibility with limited write access — focused on oversight rather than operation |
+
+---
+
+## ClientCampaignManager
+
+This role is designed for clients who take an active management role in their campaigns. They can create and configure campaigns, manage line items end-to-end, upload creatives, and access reporting — but they cannot access internal comments or Platform 195 configuration.
+
+<AccordionGroup>
+
+  <Accordion title="Dashboard">
+    - `hub.dashboard` — access the main dashboard
+    - `hub.dashboard.accounts` — view accounts dashboard
+    - `hub.dashboard.upcoming` — view upcoming campaigns
+    - `hub.dashboard.live` — view live campaigns
+    - `hub.dashboard.completed` — view completed campaigns
+    - `hub.dashboard.paused` — view paused campaigns
+    - `hub.dashboard.notifications` — view notifications
+  </Accordion>
+
+  <Accordion title="Accounts">
+    - `hub.account` — access accounts
+    - `hub.account.export` — export account data
+    - `hub.account.overview` — view account overview
+    - `hub.account.settings` — view and edit account settings
+    - `hub.account.settings.delete` — delete account settings
+  </Accordion>
+
+  <Accordion title="Campaigns">
+    - `hub.campaign` — access campaigns
+    - `hub.campaign.add` — create new campaigns
+    - `hub.campaign.export` — export campaign data
+    - `hub.campaign.overview` — view campaign overview
+    - `hub.campaign.brief` — view campaign brief
+    - `hub.campaign.creatives` — view campaign creatives
+    - `hub.campaign.evidence` — view campaign evidence
+    - `hub.campaign.reporting` — access campaign reporting
+    - `hub.campaign.comments` — view comments
+    - `hub.campaign.comments.all` — view all comments
+    - `hub.campaign.comments.all.add` — add comments
+    - `hub.campaign.documents` — view documents
+    - `hub.campaign.settings` — view campaign settings
+  </Accordion>
+
+  <Accordion title="Line Items">
+    - `hub.lineitem` — access line items
+    - `hub.lineitem.export` — export line item data
+    - `hub.lineitem.overview` — view line item overview
+    - `hub.lineitem.brief` — view line item brief
+    - `hub.lineitem.creatives` — view creatives
+    - `hub.lineitem.creatives.export` — export creatives
+    - `hub.lineitem.creatives.creative` — view individual creatives
+    - `hub.lineitem.creatives.comments` — view creative comments
+    - `hub.lineitem.creatives.comments.all` — view all creative comments
+    - `hub.lineitem.creatives.comments.all.add` — add creative comments
+    - `hub.lineitem.evidence` — view evidence
+    - `hub.lineitem.reporting` — access line item reporting
+    - `hub.lineitem.comments` — view comments
+    - `hub.lineitem.comments.all` — view all comments
+    - `hub.lineitem.comments.all.add` — add comments
+    - `hub.lineitem.documents` — view documents
+    - `hub.lineitem.settings` — view line item settings
+  </Accordion>
+
+  <Accordion title="Products & Resources">
+    - `hub.product` — access products
+    - `hub.product.export` — export product data
+    - `hub.product.settings` — view product settings
+    - `hub.resources` — access resources
+    - `hub.reporting` — access reporting
+  </Accordion>
+
+</AccordionGroup>
+
+<Note>
+  ClientCampaignManager cannot access internal comments (`hub.campaign.comments.internal`) or any Platform 195 administrative configuration.
+</Note>
+
+---
+
+## ClientOperativeRole
+
+This role suits clients who need hands-on day-to-day access — uploading creatives, adding comments, and reviewing campaign progress — without the ability to make structural changes like deleting settings or adding new campaigns.
+
+<AccordionGroup>
+
+  <Accordion title="Dashboard">
+    - `hub.dashboard` — access the main dashboard
+    - `hub.dashboard.upcoming` — view upcoming campaigns
+    - `hub.dashboard.live` — view live campaigns
+    - `hub.dashboard.completed` — view completed campaigns
+    - `hub.dashboard.paused` — view paused campaigns
+    - `hub.dashboard.notifications` — view notifications
+  </Accordion>
+
+  <Accordion title="Campaigns">
+    - `hub.campaign` — access campaigns
+    - `hub.campaign.export` — export campaign data
+    - `hub.campaign.overview` — view campaign overview
+    - `hub.campaign.overview.edit` — edit campaign overview
+    - `hub.campaign.brief` — view campaign brief
+    - `hub.campaign.brief.edit` — edit campaign brief
+    - `hub.campaign.creatives` — view campaign creatives
+    - `hub.campaign.evidence` — view campaign evidence
+    - `hub.campaign.reporting` — access campaign reporting
+    - `hub.campaign.comments` — view comments
+    - `hub.campaign.comments.all` — view all comments
+    - `hub.campaign.comments.all.add` — add comments
+    - `hub.campaign.comments.all.edit` — edit own comments
+    - `hub.campaign.comments.all.delete` — delete own comments
+    - `hub.campaign.documents` — view documents
+    - `hub.campaign.documents.add` — upload documents
+    - `hub.campaign.history` — view campaign history
+    - `hub.campaign.settings` — view campaign settings
+    - `hub.campaign.settings.delete` — delete campaign settings
+  </Accordion>
+
+  <Accordion title="Line Items">
+    - `hub.lineitem` — access line items
+    - `hub.lineitem.overview.edit` — edit line item overview
+    - `hub.lineitem.brief.edit` — edit line item brief
+    - `hub.lineitem.creatives` — view creatives
+    - `hub.lineitem.creatives.add` — add creatives
+    - `hub.lineitem.creatives.delete` — delete creatives
+    - `hub.lineitem.creatives.creative` — view individual creatives
+    - `hub.lineitem.creatives.creative.edit` — edit creatives
+    - `hub.lineitem.creatives.comments` — view creative comments
+    - `hub.lineitem.creatives.comments.all` — view all creative comments
+    - `hub.lineitem.creatives.comments.all.add` — add creative comments
+    - `hub.lineitem.creatives.comments.all.edit` — edit own creative comments
+    - `hub.lineitem.creatives.comments.all.delete` — delete own creative comments
+    - `hub.lineitem.creatives.history` — view creative history
+    - `hub.lineitem.evidence` — view evidence
+    - `hub.lineitem.evidence.edit` — edit evidence
+    - `hub.lineitem.evidence.delete` — delete evidence
+    - `hub.lineitem.reporting` — access reporting
+    - `hub.lineitem.comments` — view comments
+    - `hub.lineitem.comments.all` — view all comments
+    - `hub.lineitem.comments.all.add` — add comments
+    - `hub.lineitem.comments.all.edit` — edit own comments
+    - `hub.lineitem.comments.all.delete` — delete own comments
+    - `hub.lineitem.documents` — view documents
+    - `hub.lineitem.documents.add` — upload documents
+    - `hub.lineitem.history` — view line item history
+    - `hub.lineitem.settings` — view line item settings
+    - `hub.lineitem.settings.delete` — delete line item settings
+  </Accordion>
+
+  <Accordion title="Products & Resources">
+    - `hub.product` — access products
+    - `hub.product.add` — add products
+    - `hub.product.overview` — view product overview
+    - `hub.product.overview.edit` — edit product overview
+    - `hub.product.history` — view product history
+    - `hub.product.settings` — view product settings
+    - `hub.product.settings.delete` — delete product settings
+    - `hub.resources` — access resources
+    - `hub.resources.add` — add resources
+    - `hub.resources.delete` — delete resources
+    - `hub.reporting` — access reporting
+  </Accordion>
+
+</AccordionGroup>
+
+<Note>
+  ClientOperativeRole has broader write access within line items and creatives than ClientCampaignManager, but cannot add new campaigns or access account-level settings.
+</Note>
+
+---
+
+## SalesManager
+
+This role is designed for client-side sales and account contacts who need visibility across campaigns and reporting, without operational control. They can view dashboards, access reporting, and participate in comments, but cannot make structural or destructive changes.
+
+<AccordionGroup>
+
+  <Accordion title="Dashboard">
+    - `hub.dashboard` — access the main dashboard
+    - `hub.dashboard.accounts` — view accounts dashboard
+    - `hub.dashboard.upcoming` — view upcoming campaigns
+    - `hub.dashboard.live` — view live campaigns
+    - `hub.dashboard.completed` — view completed campaigns
+    - `hub.dashboard.paused` — view paused campaigns
+    - `hub.dashboard.notifications` — view notifications
+  </Accordion>
+
+  <Accordion title="Accounts">
+    - `hub.account` — access accounts
+    - `hub.account.export` — export account data
+    - `hub.account.overview` — view account overview
+    - `hub.account.overview.edit` — edit account overview
+    - `hub.account.settings` — view account settings
+    - `hub.account.settings.delete` — delete account settings
+  </Accordion>
+
+  <Accordion title="Campaigns">
+    - `hub.campaign` — access campaigns
+    - `hub.campaign.add` — create new campaigns
+    - `hub.campaign.export` — export campaign data
+    - `hub.campaign.overview` — view campaign overview
+    - `hub.campaign.overview.edit` — edit campaign overview
+    - `hub.campaign.brief` — view campaign brief
+    - `hub.campaign.creatives` — view campaign creatives
+    - `hub.campaign.evidence` — view campaign evidence
+    - `hub.campaign.reporting` — access campaign reporting
+    - `hub.campaign.comments` — view comments
+    - `hub.campaign.comments.all` — view all comments
+    - `hub.campaign.comments.all.add` — add comments
+    - `hub.campaign.documents` — view documents
+    - `hub.campaign.documents.add` — upload documents
+  </Accordion>
+
+  <Accordion title="Line Items">
+    - `hub.lineitem` — access line items
+    - `hub.lineitem.overview` — view line item overview
+    - `hub.lineitem.brief` — view line item brief
+    - `hub.lineitem.creatives` — view creatives
+    - `hub.lineitem.creatives.export` — export creatives
+    - `hub.lineitem.creatives.creative` — view individual creatives
+    - `hub.lineitem.creatives.comments.all` — view all creative comments
+    - `hub.lineitem.creatives.comments.all.add` — add creative comments
+    - `hub.lineitem.evidence` — view evidence
+    - `hub.lineitem.reporting` — access reporting
+    - `hub.lineitem.comments` — view comments
+    - `hub.lineitem.comments.all` — view all comments
+    - `hub.lineitem.comments.all.add` — add comments
+    - `hub.lineitem.comments.all.edit` — edit own comments
+    - `hub.lineitem.comments.all.delete` — delete own comments
+    - `hub.lineitem.documents` — view documents
+    - `hub.lineitem.documents.add` — upload documents
+  </Accordion>
+
+  <Accordion title="Products & Resources">
+    - `hub.product` — access products
+    - `hub.product.export` — export product data
+    - `hub.product.settings` — view product settings
+    - `hub.resources` — access resources
+    - `hub.resources.add` — add resources
+    - `hub.resources.delete` — delete resources
+    - `hub.reporting` — access reporting
+  </Accordion>
+
+</AccordionGroup>
+
+<Note>
+  SalesManager shares a similar breadth of access to ClientCampaignManager at the campaign level, but also gains account-level overview and edit access. It is intended for senior client contacts who need cross-account visibility.
+</Note>
