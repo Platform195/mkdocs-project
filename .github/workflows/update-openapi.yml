@@ -1,0 +1,71 @@
+- name: Fix server URL, group tags and endpoint names
+        run: |
+          node -e "
+            const fs = require('fs');
+            const spec = JSON.parse(fs.readFileSync('openapi.json', 'utf8'));
+
+            spec.servers = [{ url: 'https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1' }];
+
+            const tagMap = {
+              'Account':      'Accounts',
+              'Campaign':     'Campaigns',
+              'LineItem':     'Line Items',
+              'Product':      'Products',
+              'DocumentType': 'Documents',
+              'SourceMarket': 'Source Markets',
+              'SYS_':         'System',
+            };
+
+            const summaryMap = {
+              'CreateAccount':                  'Create Account',
+              'UpdateAccount':                  'Update Account',
+              'ListAccounts':                   'List Accounts',
+              'ListAccountTypes':               'List Account Types',
+              'CreateCampaign':                 'Create Campaign',
+              'UpdateCampaign':                 'Update Campaign',
+              'ListCampaigns':                  'List Campaigns',
+              'ListCampaignStatues':            'List Campaign Statuses',
+              'CreateLineItem':                 'Create Line Item',
+              'UpdateLineItem':                 'Update Line Item',
+              'ListLineItems':                  'List Line Items',
+              'ListLineItemStatuses':           'List Line Item Statuses',
+              'CreateProduct':                  'Create Product',
+              'UpdateProduct':                  'Update Product',
+              'ListProducts':                   'List Products',
+              'ListProductChannels':            'List Product Channels',
+              'ListProductPlatforms':           'List Product Platforms',
+              'CreateCampaignDocument':         'Create Campaign Document',
+              'CreateDocumentType':             'Create Document Type',
+              'ListDocumentTypes':              'List Document Types',
+              'ListSourceMarket':               'List Source Markets',
+              'SYS_CreateCampaignNotification': 'Create Campaign Notification',
+            };
+
+            for (const [path, methods] of Object.entries(spec.paths)) {
+              for (const operation of Object.values(methods)) {
+                const tag = Object.entries(tagMap).find(([key]) => path.includes(key));
+                operation.tags = tag ? [tag[1]] : ['General'];
+                if (summaryMap[operation.operationId]) {
+                  operation.summary = summaryMap[operation.operationId];
+                }
+              }
+            }
+
+            spec.tags = [
+              { name: 'Accounts' },
+              { name: 'Campaigns' },
+              { name: 'Line Items' },
+              { name: 'Products' },
+              { name: 'Documents' },
+              { name: 'Source Markets' },
+              { name: 'System' },
+            ];
+
+            // 👇 Add these two lines for API key auth
+            spec.components.securitySchemes = {
+              ApiKeyAuth: { type: 'apiKey', in: 'header', name: 'X-API-Key' }
+            };
+            spec.security = [{ ApiKeyAuth: [] }];
+
+            fs.writeFileSync('openapi.json', JSON.stringify(spec, null, 4));
+          "
