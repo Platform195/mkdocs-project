@@ -3,7 +3,7 @@ name: Update OpenAPI spec
 on:
   schedule:
     - cron: '0 6 * * 1'  # every Monday at 6am
-  workflow_dispatch:       # also allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   convert:
@@ -13,6 +13,48 @@ jobs:
 
       - name: Convert Swagger 2.0 → OpenAPI 3.0
         run: npx --yes swagger2openapi https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json -o openapi.json
+
+      - name: Fix server URL and group tags
+        run: |
+          node -e "
+            const fs = require('fs');
+            const spec = JSON.parse(fs.readFileSync('openapi.json', 'utf8'));
+
+            // Fix server URL
+            spec.servers = [{ url: 'https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1' }];
+
+            // Tag map — path keyword → group name
+            const tagMap = {
+              'Account':          'Accounts',
+              'Campaign':         'Campaigns',
+              'LineItem':         'Line Items',
+              'Product':          'Products',
+              'DocumentType':     'Documents',
+              'SourceMarket':     'Source Markets',
+              'SYS_':             'System',
+            };
+
+            // Apply tags to each operation
+            for (const [path, methods] of Object.entries(spec.paths)) {
+              for (const operation of Object.values(methods)) {
+                const tag = Object.entries(tagMap).find(([key]) => path.includes(key));
+                operation.tags = tag ? [tag[1]] : ['General'];
+              }
+            }
+
+            // Define tag order for sidebar
+            spec.tags = [
+              { name: 'Accounts' },
+              { name: 'Campaigns' },
+              { name: 'Line Items' },
+              { name: 'Products' },
+              { name: 'Documents' },
+              { name: 'Source Markets' },
+              { name: 'System' },
+            ];
+
+            fs.writeFileSync('openapi.json', JSON.stringify(spec, null, 4));
+          "
 
       - name: Commit if changed
         run: |
