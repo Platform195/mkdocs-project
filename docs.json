@@ -116,6 +116,10 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json"
       }
     ]
   },
