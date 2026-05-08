@@ -59,7 +59,7 @@ spec.tags = [
 ];
 
 spec.components.securitySchemes = {
-  ApiKeyAuth: { type: 'apiKey', in: 'header', name: 'X-API-Key' }
+  ApiKeyAuth: { type: 'apiKey', in: 'header', name: 'X-apikey' }
 };
 spec.security = [{ ApiKeyAuth: [] }];
 
