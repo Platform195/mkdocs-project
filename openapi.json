@@ -1,0 +1,1806 @@
+{
+    "openapi": "3.0.0",
+    "x-origin": [
+        {
+            "url": "https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json",
+            "format": "swagger",
+            "version": "2.0",
+            "converter": {
+                "url": "https://github.com/mermade/oas-kit",
+                "version": "7.0.8"
+            }
+        }
+    ],
+    "info": {
+        "title": "V1",
+        "description": "",
+        "version": "1"
+    },
+    "paths": {
+        "/Account": {
+            "put": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "UpdateAccount",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAccount"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "CreateAccount",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAccount"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Campaign": {
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "CreateCampaign",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateCampaign"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateCampaignResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "UpdateCampaign",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCampaign"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/CampaignDocument": {
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "CreateCampaignDocument",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateCampaignDocument"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/DocumentType": {
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "CreateDocumentType",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateDocumentType"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/LineItem": {
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "CreateLineItem",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateLineItem"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "UpdateLineItem",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateLineItem"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListAccounts": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListAccounts",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AccountResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListAccountTypes": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListAccountTypes",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IdNameResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListCampaigns": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListCampaigns",
+                "parameters": [
+                    {
+                        "name": "CampaignId",
+                        "in": "query",
+                        "required": false,
+                        "example": 1234567891234567,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CampaignResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListCampaignStatues": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListCampaignStatues",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ListCampaignStatuses"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListDocumentTypes": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListDocumentTypes",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/DocumentTypeResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListLineItems": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListLineItems",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LineItemResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListLineItemStatuses": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListLineItemStatuses",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LineItemStatuses"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListProductChannels": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListProductChannels",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IdNameResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListProductPlatforms": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListProductPlatforms",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/IdNameResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListProducts": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListProducts",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ListSourceMarket": {
+            "get": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "ListSourceMarket",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ListSourceMarketResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Product": {
+            "put": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "UpdateProduct",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateProduct"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "CreateProduct",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateProduct"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SYS_CreateCampaignNotification": {
+            "post": {
+                "tags": [
+                    "V1"
+                ],
+                "description": "",
+                "operationId": "SYS_CreateCampaignNotification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SYS_CreateCampaignNotification"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GenericResponseStructure"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "V1"
+        }
+    ],
+    "servers": [
+        {
+            "url": "/P195_Exposed_Integrations/rest/V1"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "AccountContactItem": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "ContactName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ContactPhone": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ContactEmail": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "ContactEmailAddress"
+                ]
+            },
+            "AccountResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AccountTypeId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Contacts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AccountContactItem"
+                        }
+                    }
+                },
+                "required": [
+                    "Id",
+                    "ExternalId",
+                    "Name",
+                    "AccountTypeId"
+                ]
+            },
+            "CampaignBriefFieldItem": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "FieldName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "FieldValue": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "CampaignResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AccountId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "StartDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "EndDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "PartnerBudget": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "SalesProbability": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "CampaignStatusId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "CampaignStatusLable": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "Id",
+                    "ExternalId",
+                    "Name",
+                    "AccountId",
+                    "StartDate",
+                    "EndDate",
+                    "PartnerBudget",
+                    "SalesProbability"
+                ]
+            },
+            "CreateAccount": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AccountTypeId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Contacts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AccountContactItem"
+                        }
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "Name",
+                    "AccountTypeId"
+                ]
+            },
+            "CreateCampaign": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AccountId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "StartDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "EndDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "PartnerBudget": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "SalesProbability": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "CampaignBriefFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CampaignBriefFieldItem"
+                        }
+                    },
+                    "LineItems": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreateLineItem"
+                        }
+                    },
+                    "SourceMarket": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ContractSigned": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "CampaignStatusId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    }
+                }
+            },
+            "CreateCampaignDocument": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "CampaignId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "DocumentTypeId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "FileURL": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "CreateCampaignResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Success": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "Message": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "LineItems": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GenericResponseStructure"
+                        }
+                    }
+                },
+                "required": [
+                    "Success",
+                    "Message"
+                ]
+            },
+            "CreateDocumentType": {
+                "description": "Document Type",
+                "type": "object",
+                "properties": {
+                    "EventId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "CreateLineItem": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "LineItemName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "CampaignId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ProductId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "StartDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "EndDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "Quantity": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "PartnerRate": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "FulfilmentCost": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "PartnerDiscount": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "LineItemReportingFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LineItemReportingField"
+                        }
+                    },
+                    "LineItemEvidence": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LineItemEvidenceField"
+                        }
+                    },
+                    "LineItemBriefFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LineItemBriefFieldItem"
+                        }
+                    },
+                    "EvidenceFilename_1": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_1": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_2": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_2": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_3": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_3": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_4": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_4": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_5": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_5": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "LineItemStatusId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "CostBasis_Override": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "CreateProduct": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Description": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "PlatformId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ChannelId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "SourceMarket": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "FormatAdSpec": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AdCreativeDeadline": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "CostBasis": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "RateCard": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "PartnerRate": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "MinimumPartnerBudget": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "FulfillmentCost": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "NumberOfPlacementsPerCostBasis": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "MaximumEvidenceImages": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "EnableInventoryManagement": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "InventoryBasis": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "NumberOfPlacementsPerInventoryBasis": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "TextCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "IntegerCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "DecimalCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "DocumentTypeResponse": {
+                "description": "Document Type",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "EventId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "GenericResponseStructure": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Success": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "Message": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "Success",
+                    "Message"
+                ]
+            },
+            "IdNameResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "Id",
+                    "Name"
+                ]
+            },
+            "LineItemBriefFieldItem": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "FieldName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "FieldValue": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "LineItemEvidenceField": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "EvidenceFileName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceDescription": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "LineItemReportingField": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "FieldName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "FieldValue": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "LineItemResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ProductId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "CampaignId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "StartDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "EndDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "Quantity": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "LineItemStatusId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "LineItemStatusLabel": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "LineItemStatuses": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Status": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Order": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "IsActive": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "CustomColourId": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    }
+                },
+                "required": [
+                    "Id"
+                ]
+            },
+            "ListCampaignStatuses": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "IsSalesStatus": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "IsCampaignStatus": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "Label": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "SalesAlternateLabel": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "CampaignOrder": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "SalesOrder": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "ClientId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "CustomColourId": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "IsEditable": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "IsActive": {
+                        "type": "boolean",
+                        "example": false
+                    }
+                },
+                "required": [
+                    "Id"
+                ]
+            },
+            "ListSourceMarketResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "SourceMarketID": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "MarketName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Abbreviation": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ContactEmail": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "ProductResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Description": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "Id",
+                    "Name",
+                    "ExternalId",
+                    "Description"
+                ]
+            },
+            "SYS_CreateCampaignNotification": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "CampaignId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Header": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Text": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "UpdateAccount": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AccountTypeId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Contacts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AccountContactItem"
+                        }
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "Name",
+                    "AccountTypeId"
+                ]
+            },
+            "UpdateCampaign": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AccountId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "StartDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "EndDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "PartnerBudget": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "SalesProbability": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "CampaignBriefFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CampaignBriefFieldItem"
+                        }
+                    },
+                    "SourceMarket": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ContractSigned": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "CampaignStatusId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    }
+                }
+            },
+            "UpdateLineItem": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "LineItemName": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "CampaignId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ProductId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "StartDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "EndDate": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    },
+                    "Quantity": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "PartnerRate": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "FulfilmentCost": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "PartnerDiscount": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "LineItemReportingFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LineItemReportingField"
+                        }
+                    },
+                    "LineItemEvidence": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LineItemEvidenceField"
+                        }
+                    },
+                    "LineItemBriefFields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LineItemBriefFieldItem"
+                        }
+                    },
+                    "EvidenceFilename_1": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_1": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_2": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_2": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_3": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_3": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_4": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_4": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceFilename_5": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "EvidenceURL_5": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "LineItemStatusId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "CostBasis_Override": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "UpdateProduct": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "Name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "ExternalId": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "Description": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "PlatformId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "ChannelId": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "SourceMarket": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "FormatAdSpec": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "AdCreativeDeadline": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "CostBasis": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "RateCard": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "PartnerRate": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "MinimumPartnerBudget": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "FulfillmentCost": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "NumberOfPlacementsPerCostBasis": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "MaximumEvidenceImages": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "EnableInventoryManagement": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "InventoryBasis": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "NumberOfPlacementsPerInventoryBasis": {
+                        "type": "integer",
+                        "example": 0,
+                        "format": "int32"
+                    },
+                    "TextCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "IntegerCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "DecimalCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "RemovedCustomReportingFields": {
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            }
+        }
+    }
+}
