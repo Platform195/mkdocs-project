@@ -20,7 +20,7 @@
         "/Account": {
             "put": {
                 "tags": [
-                    "V1"
+                    "Accounts"
                 ],
                 "description": "",
                 "operationId": "UpdateAccount",
@@ -49,7 +49,7 @@
             },
             "post": {
                 "tags": [
-                    "V1"
+                    "Accounts"
                 ],
                 "description": "",
                 "operationId": "CreateAccount",
@@ -80,7 +80,7 @@
         "/Campaign": {
             "post": {
                 "tags": [
-                    "V1"
+                    "Campaigns"
                 ],
                 "description": "",
                 "operationId": "CreateCampaign",
@@ -109,7 +109,7 @@
             },
             "put": {
                 "tags": [
-                    "V1"
+                    "Campaigns"
                 ],
                 "description": "",
                 "operationId": "UpdateCampaign",
@@ -140,7 +140,7 @@
         "/CampaignDocument": {
             "post": {
                 "tags": [
-                    "V1"
+                    "Campaigns"
                 ],
                 "description": "",
                 "operationId": "CreateCampaignDocument",
@@ -171,7 +171,7 @@
         "/DocumentType": {
             "post": {
                 "tags": [
-                    "V1"
+                    "Documents"
                 ],
                 "description": "",
                 "operationId": "CreateDocumentType",
@@ -202,7 +202,7 @@
         "/LineItem": {
             "post": {
                 "tags": [
-                    "V1"
+                    "Line Items"
                 ],
                 "description": "",
                 "operationId": "CreateLineItem",
@@ -231,7 +231,7 @@
             },
             "put": {
                 "tags": [
-                    "V1"
+                    "Line Items"
                 ],
                 "description": "",
                 "operationId": "UpdateLineItem",
@@ -262,7 +262,7 @@
         "/ListAccounts": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Accounts"
                 ],
                 "description": "",
                 "operationId": "ListAccounts",
@@ -286,7 +286,7 @@
         "/ListAccountTypes": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Accounts"
                 ],
                 "description": "",
                 "operationId": "ListAccountTypes",
@@ -310,7 +310,7 @@
         "/ListCampaigns": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Campaigns"
                 ],
                 "description": "",
                 "operationId": "ListCampaigns",
@@ -346,7 +346,7 @@
         "/ListCampaignStatues": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Campaigns"
                 ],
                 "description": "",
                 "operationId": "ListCampaignStatues",
@@ -370,7 +370,7 @@
         "/ListDocumentTypes": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Documents"
                 ],
                 "description": "",
                 "operationId": "ListDocumentTypes",
@@ -394,7 +394,7 @@
         "/ListLineItems": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Line Items"
                 ],
                 "description": "",
                 "operationId": "ListLineItems",
@@ -418,7 +418,7 @@
         "/ListLineItemStatuses": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Line Items"
                 ],
                 "description": "",
                 "operationId": "ListLineItemStatuses",
@@ -442,7 +442,7 @@
         "/ListProductChannels": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Products"
                 ],
                 "description": "",
                 "operationId": "ListProductChannels",
@@ -466,7 +466,7 @@
         "/ListProductPlatforms": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Products"
                 ],
                 "description": "",
                 "operationId": "ListProductPlatforms",
@@ -490,7 +490,7 @@
         "/ListProducts": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Products"
                 ],
                 "description": "",
                 "operationId": "ListProducts",
@@ -514,7 +514,7 @@
         "/ListSourceMarket": {
             "get": {
                 "tags": [
-                    "V1"
+                    "Source Markets"
                 ],
                 "description": "",
                 "operationId": "ListSourceMarket",
@@ -538,7 +538,7 @@
         "/Product": {
             "put": {
                 "tags": [
-                    "V1"
+                    "Products"
                 ],
                 "description": "",
                 "operationId": "UpdateProduct",
@@ -567,7 +567,7 @@
             },
             "post": {
                 "tags": [
-                    "V1"
+                    "Products"
                 ],
                 "description": "",
                 "operationId": "CreateProduct",
@@ -598,7 +598,7 @@
         "/SYS_CreateCampaignNotification": {
             "post": {
                 "tags": [
-                    "V1"
+                    "Campaigns"
                 ],
                 "description": "",
                 "operationId": "SYS_CreateCampaignNotification",
@@ -629,12 +629,30 @@
     },
     "tags": [
         {
-            "name": "V1"
+            "name": "Accounts"
+        },
+        {
+            "name": "Campaigns"
+        },
+        {
+            "name": "Line Items"
+        },
+        {
+            "name": "Products"
+        },
+        {
+            "name": "Documents"
+        },
+        {
+            "name": "Source Markets"
+        },
+        {
+            "name": "System"
         }
     ],
     "servers": [
         {
-            "url": "/P195_Exposed_Integrations/rest/V1"
+            "url": "https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1"
         }
     ],
     "components": {

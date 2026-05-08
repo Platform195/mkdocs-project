@@ -63,7 +63,7 @@
 
             // 👇 Add these two lines for API key auth
             spec.components.securitySchemes = {
-              ApiKeyAuth: { type: 'apiKey', in: 'header', name: 'X-API-Key' }
+              ApiKeyAuth: { type: 'apiKey', in: 'header', name: 'X-apikey' }
             };
             spec.security = [{ ApiKeyAuth: [] }];
 
