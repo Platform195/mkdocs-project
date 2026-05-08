@@ -45,7 +45,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Update Account"
             },
             "post": {
                 "tags": [
@@ -74,7 +75,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Account"
             }
         },
         "/Campaign": {
@@ -105,7 +107,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Campaign"
             },
             "put": {
                 "tags": [
@@ -134,7 +137,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Update Campaign"
             }
         },
         "/CampaignDocument": {
@@ -165,7 +169,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Campaign Document"
             }
         },
         "/DocumentType": {
@@ -196,7 +201,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Document Type"
             }
         },
         "/LineItem": {
@@ -227,7 +233,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Line Item"
             },
             "put": {
                 "tags": [
@@ -256,7 +263,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Update Line Item"
             }
         },
         "/ListAccounts": {
@@ -280,7 +288,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Accounts"
             }
         },
         "/ListAccountTypes": {
@@ -304,7 +313,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Account Types"
             }
         },
         "/ListCampaigns": {
@@ -340,7 +350,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Campaigns"
             }
         },
         "/ListCampaignStatues": {
@@ -364,7 +375,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Campaign Statuses"
             }
         },
         "/ListDocumentTypes": {
@@ -388,7 +400,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Document Types"
             }
         },
         "/ListLineItems": {
@@ -412,7 +425,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Line Items"
             }
         },
         "/ListLineItemStatuses": {
@@ -436,7 +450,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Line Item Statuses"
             }
         },
         "/ListProductChannels": {
@@ -460,7 +475,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Product Channels"
             }
         },
         "/ListProductPlatforms": {
@@ -484,7 +500,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Product Platforms"
             }
         },
         "/ListProducts": {
@@ -508,7 +525,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Products"
             }
         },
         "/ListSourceMarket": {
@@ -532,7 +550,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "List Source Markets"
             }
         },
         "/Product": {
@@ -563,7 +582,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Update Product"
             },
             "post": {
                 "tags": [
@@ -592,7 +612,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Product"
             }
         },
         "/SYS_CreateCampaignNotification": {
@@ -623,7 +644,8 @@
                             }
                         }
                     }
-                }
+                },
+                "summary": "Create Campaign Notification"
             }
         }
     },
@@ -1819,6 +1841,18 @@
                     }
                 }
             }
+        },
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-API-Key"
+            }
         }
-    }
+    },
+    "security": [
+        {
+            "ApiKeyAuth": []
+        }
+    ]
 }
