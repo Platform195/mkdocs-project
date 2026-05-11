@@ -111,6 +111,7 @@
           {
             "group": "Reference",
             "pages": [
+              "reference/api-getting-started",
               "reference/glossary",
               "reference/support"
             ]

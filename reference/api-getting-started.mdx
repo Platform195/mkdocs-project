@@ -1,0 +1,65 @@
+---
+title: Getting started with the API
+description: How to get access to the Uplift Hub API and authenticate your requests.
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+The Uplift Hub API lets you create and update accounts, campaigns, line items, products, and documents programmatically — useful for integrating Uplift Hub with your own systems, CRMs, or booking platforms.
+
+All endpoints are documented in the [API Reference](/api-reference) tab.
+
+---
+
+## Getting access
+
+The API is not enabled by default. To get access, contact your Platform 195 account manager. They will enable the API for your account and provide you with an API key.
+
+<Note>
+  If you don't have an account manager contact yet, email [support@uplifthub.io](mailto:support@uplifthub.io).
+</Note>
+
+---
+
+## Authentication
+
+Every request to the API must include your API key in the request header:
+
+```http
+X-apikey: YOUR_API_KEY
+```
+
+Requests made without a valid key will be rejected.
+
+**Example using curl:**
+
+```bash
+curl -X GET "https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/ListCampaigns" \
+  -H "X-apikey: YOUR_API_KEY"
+```
+
+---
+
+## Regenerating your API key
+
+If your key is compromised or you need to rotate it, contact your Platform 195 account manager to request a new one.
+
+<Warning>
+  Regenerating your API key immediately invalidates all existing keys for your account. Any integrations using the old key will stop working until they are updated with the new one.
+</Warning>
+
+---
+
+## Base URL
+
+All API endpoints are relative to:
+
+```
+https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1
+```
+
+---
+
+## Next steps
+
+Browse the [API Reference](/api-reference) tab for the full list of available endpoints, request bodies, and response schemas. A good place to start is [List Accounts](/api-reference/accounts/list-accounts) to confirm your key is working and retrieve your account IDs — most other endpoints require an account or campaign ID.
