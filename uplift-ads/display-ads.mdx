@@ -1,0 +1,131 @@
+---
+title: "Display Ads"
+description: "Request, serve, and report on fixed-size display banner placements."
+---
+
+import { Ui } from "/snippets/ui-ref.mdx";
+
+Display ads are fixed banner sizes served into containers on the relevant page. Platform 195 will map the appropriate banner sizes to each viewport (desktop, tablet, mobile) during the recommendation stage — this is handled using the `adTypes` parameter.
+
+Display ads work across any digital page. They are particularly effective on search results pages, where dynamic keyword targeting can be applied based on the user's active search criteria.
+
+## Requesting display ads
+
+POST to the display ad endpoint at page load. Authentication is required via headers — see [Authentication](/uplift-ads/authentication).
+
+**Endpoint:** `POST https://dev.api.upliftads.io/v3/display-ad`
+
+```json
+{
+  "siteId": YOUR_SITE_ID,
+  "zoneIds": ["YOUR_ZONE_ID"],
+  "adTypes": [YOUR_AD_TYPE_ID],
+  "count": 1,
+  "keywords": [
+    "Dest.{DestinationMacro}",
+    "Dep.{DepartureMacro}",
+    "MonthYear.{DateMacro}",
+    "Duration.{DurationMacro}",
+    "Adults.{AdultsMacro}",
+    "Children.{ChildrenMacro}"
+  ]
+}
+```
+
+### Request parameters
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `siteId` | number | Yes | Your site ID. Provided by Platform 195. Must match the `x-site-id` header. |
+| `zoneIds` | array | Yes | One or more zone IDs identifying the ad placement(s) on the page. Provided by Platform 195. |
+| `adTypes` | array | Yes | ID reference for the banner size(s) to serve per viewport. Provided by Platform 195. |
+| `count` | number | Yes | Number of ads to request per zone. |
+| `keywords` | array | No | Targeting parameters. See [keyword targeting](#keyword-targeting) below. |
+
+### Keyword targeting
+
+For search results pages, keywords are dynamic values derived from the user's active search. Each keyword follows a `Key.Value` format.
+
+| Targeting key | Description | Example value | Keyword format |
+|---|---|---|---|
+| `Dest` | Destination ID. Format: `{ID}-{Level}` where level is 1 = Country, 2 = Region, 3 = Resort. | Madeira | `Dest.123-2` |
+| `Dep` | Departure airport code | London Gatwick | `Dep.LGW` |
+| `MonthYear` | Travel month and year in `MMYYYY` format | April 2023 | `MonthYear.042023` |
+| `Duration` | Number of nights searched | 7 | `Duration.7` |
+| `Adults` | Number of adults | 2 | `Adults.2` |
+| `Children` | Pass `Y` if the search includes children | 1 child | `Children.Y` |
+
+<Note>The targeting keys above are examples for a travel/OTA use case. Your account manager will confirm the agreed keyword taxonomy for your property during onboarding.</Note>
+
+## Response
+
+A successful response contains the banner dimensions and image URL to render.
+
+```json
+{
+  "decisions": {
+    "Display_1": [
+      {
+        "adId": 000000000,
+        "creativeId": 000000000,
+        "flightId": 000000000,
+        "campaignId": 000000000,
+        "clickUrl": "https://dev.engine.upliftads.io/r?e=...",
+        "impressionUrl": "https://dev.engine.upliftads.io/i.gif?e=...",
+        "contents": [
+          {
+            "type": "raw",
+            "data": {
+              "height": 250,
+              "width": 300,
+              "imageUrl": "https://cdn.upliftads.io/path/to/banner.jpg"
+            }
+          }
+        ],
+        "events": [
+          {
+            "id": 40,
+            "url": "https://dev.engine.upliftads.io/e.gif?e=..."
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Response fields
+
+| Field | Description |
+|---|---|
+| `contents[].data.height` | Banner height in pixels. |
+| `contents[].data.width` | Banner width in pixels. |
+| `contents[].data.imageUrl` | URL of the banner image to render. |
+| `events[id=40].url` | Viewable impression tracking URL. |
+
+### The `clickUrl`
+
+The `clickUrl` serves a dual purpose — it acts as both a **click counter** and a **redirect** to the ad's destination. When a user clicks the ad, direct them to the `clickUrl`; the Uplift engine will record the click and redirect to the advertiser's destination URL automatically.
+
+## Handling empty responses
+
+If no ads are available, the response will be empty.
+
+- **If the ad position has no surrounding content** — collapse the div so no blank space appears.
+- **If the ad position is required to fill space on the page** — Platform 195 will ensure an ad is always returned for that zone.
+
+## Reporting
+
+See [Tracking Ad Engagement](/uplift-ads/tracking) for full details on firing impression, click, viewable impression, and conversion tracking URLs.
+
+## Evidencing
+
+Wrap each display ad placement in a `div` with a class of `FID_` followed by the `flightId` from the response:
+
+```html
+<div class="existing_class FID_{{flightId}}">
+  <!-- display ad HTML -->
+</div>
+```
+
+See [Automated Screenshots](/more/automated-screenshots) for more detail.

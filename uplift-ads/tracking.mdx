@@ -1,0 +1,69 @@
+---
+title: "Tracking Ad Engagement"
+description: "How to implement impression, click, viewability, and conversion tracking for all Uplift Ads formats."
+---
+
+Every Uplift Ads response contains a set of tracking URLs unique to each individual ad. You must fire these URLs as GET requests at the appropriate user events. Tracking is consistent across all ad formats — Native, Display, Sponsored, and Recommender.
+
+<Warning>Impression and click tracking are essential. Without them, delivery and billing data will be inaccurate and advertiser reporting will be incomplete.</Warning>
+
+## Essential tracking
+
+### Impressions
+
+**Response field:** `impressionUrl`
+
+Fire a GET request to this URL every time an ad is delivered to a user. This must be fired for every ad displayed — including each time a Sponsored Ad remains in or moves into a sponsored position after a user applies a filter.
+
+### Clicks
+
+**Response field:** `clickUrl`
+
+Fire a GET request to this URL when a user clicks on the ad.
+
+## Optional tracking
+
+These are not mandatory but are strongly recommended for complete reporting.
+
+### Viewable impressions
+
+**Response field:** `viewableImpressionUrl`
+
+Fire a GET request to this URL when the ad meets the industry-standard in-view threshold: **at least 50% of the ad visible within the user's viewport for over 1 second**.
+
+<Tip>Viewability data is used to optimise placements and is valuable for advertiser reporting. Platform 195 recommends implementing this for all placements.</Tip>
+
+### Conversions
+
+**Response field:** `conversionUrl`
+
+Fire a GET request to this URL when a user completes a checkout within the same session that a relevant ad was served to them — for example, booking a hotel that appeared in a sponsored placement.
+
+You decide at which checkout stage to fire this (e.g. immediately before payment, or on the confirmation page). Append sale details as query parameters to the `conversionUrl`:
+
+| Parameter | Description | Example |
+|---|---|---|
+| `&override=` | Total booking revenue | `&override=2790` |
+| `&property:rooms=` | Number of rooms booked | `&property:rooms=1` |
+| `&property:nights=` | Number of room nights | `&property:nights=7` |
+| `&property:adults=` | Number of adults | `&property:adults=2` |
+| `&property:children=` | Number of children | `&property:children=2` |
+
+#### Conversion example
+
+A user books a hotel after clicking a sponsored ad. Booking details: £2,790 revenue, 1 room, 7 nights, 2 adults, 2 children.
+
+Append the parameters to the `conversionUrl` from the response:
+
+```
+{conversionUrl}&override=2790&property:rooms=1&property:nights=7&property:adults=2&property:children=2
+```
+
+## Tracking URL reference
+
+| URL field | Tracking type | Required |
+|---|---|---|
+| `impressionUrl` | Ad delivered to user | Yes |
+| `clickUrl` | User clicks the ad | Yes |
+| `viewableImpressionUrl` | Ad meets in-view threshold | Recommended |
+| `conversionUrl` | User completes a purchase in session | Recommended |

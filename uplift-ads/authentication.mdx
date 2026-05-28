@@ -1,0 +1,35 @@
+---
+title: "Authentication"
+description: "How to authenticate requests to the Uplift Ads API."
+---
+
+All requests to the Uplift Ads API must include two authentication headers. These verify both the client application and the specific site making the request.
+
+## Required headers
+
+| Header | Description |
+|---|---|
+| `x-api-key` | Your unique API key issued by Platform 195. Authorises access to the API. |
+| `x-site-id` | The identifier for the site making the request. Used to route the request to the correct site configuration, and supports multi-site and white-label setups. |
+
+Your `x-api-key` and `x-site-id` values are provided by Platform 195 during onboarding. The site ID is passed in **both** the `x-site-id` header and the `siteId` body parameter on every request.
+
+## Example request
+
+```http
+POST https://api.upliftads.io/v3/native-ad
+Content-Type: application/json
+x-api-key: YOUR_API_KEY
+x-site-id: YOUR_SITE_ID
+
+{
+  "siteId": YOUR_SITE_ID,
+  "zoneIds": ["YOUR_ZONE_ID"],
+  "count": 1,
+  "keywords": ["Page.homepage"]
+}
+```
+
+
+
+<Warning>Keep your `x-api-key` secure. Do not expose it in client-side code or public repositories. All Uplift Ads requests should be made server-side.</Warning>

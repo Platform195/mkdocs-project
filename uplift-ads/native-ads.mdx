@@ -1,0 +1,104 @@
+---
+title: "Native Ads"
+description: "Request, serve, and report on responsive native ad placements."
+---
+
+import { Ui } from "/snippets/ui-ref.mdx";
+
+Native ads are responsive placements custom-designed to match the style and layout of your web content. They typically appear on channel landing pages — such as your homepage, destination pages, or category pages — and are targeted by page context using keywords.
+
+Platform 195 will recommend placement positions after reviewing your web properties. Once agreed, the CSS and HTML can be built to match the responsive behaviour of your content, or Platform 195 can build this for you.
+
+## Requesting native ads
+
+POST to the native ad endpoint at page load. Authentication is required via headers — see [Authentication](/uplift-ads/authentication).
+
+**Endpoint:** `POST https://dev.api.upliftads.io/v3/native-ad`
+
+```json
+{
+  "siteId": YOUR_SITE_ID,
+  "zoneIds": ["YOUR_ZONE_ID"],
+  "count": 1,
+  "keywords": ["Page.{PageMacro}"]
+}
+```
+
+### Request parameters
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `siteId` | number | Yes | Your site ID. Provided by Platform 195. Must match the `x-site-id` header. |
+| `zoneIds` | array | Yes | One or more zone IDs identifying the ad placement(s) on the page. Provided by Platform 195. |
+| `count` | number | Yes | Number of ads to request per zone. Set to `1` if there is one placement per zone. |
+| `keywords` | array | No | Targeting parameters. See [page-level targeting](#page-level-targeting) below. |
+
+### Page-level targeting
+
+Include a `Page.` prefixed keyword matching the current page to target ads contextually. Your account manager will confirm the full keyword list for your property during onboarding.
+
+| Page | Keyword format |
+|---|---|
+| Homepage | `Page.homepage` |
+| A category page | `Page.{category-slug}` |
+| A destination page | `Page.{destination-name}` |
+
+## Response
+
+A successful response contains ad metadata, tracking URLs, and a `creativeContent` object with the components needed to render the ad.
+
+```json
+{
+  "decisions": {
+    "Native_1": [
+      {
+        "adId": 000000000,
+        "creativeId": 000000000,
+        "flightId": 000000000,
+        "campaignId": 0000000,
+        "clickUrl": "https://dev.engine.upliftads.io/r?e=...",
+        "impressionUrl": "https://dev.engine.upliftads.io/i.gif?e=...",
+        "viewableImpressionUrl": "https://dev.engine.upliftads.io/e.gif?e=...",
+        "creativeContent": [
+          {
+            "componentKey": "componentValue"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Creative components
+
+The `creativeContent` object contains the individual components of the ad creative — things like images, headings, and a destination URL. The specific components available vary per campaign and are agreed with Platform 195 during onboarding. Your HTML template should be built to map these components into the correct positions.
+
+<Note>Platform 195 will provide a full list of the creative components configured for your implementation, along with guidance on how to map them to your HTML template.</Note>
+
+### The `clickUrl`
+
+The `clickUrl` serves a dual purpose — it acts as both a **click counter** and a **redirect** to the ad's destination. When a user clicks the ad, direct them to the `clickUrl`; the Uplift engine will record the click and redirect to the advertiser's destination URL automatically.
+
+## Handling empty responses
+
+If no ads are available, the response will be empty. How you handle this depends on the placement:
+
+- **If the ad position has no surrounding content** — collapse the div so no blank space appears.
+- **If the ad position is required to fill space on the page** — Platform 195 will ensure an ad is always returned for that zone.
+
+## Reporting
+
+See [Tracking Ad Engagement](/uplift-ads/tracking) for full details on firing impression, click, viewable impression, and conversion tracking URLs.
+
+## Evidencing
+
+Wrap each native ad placement in a `div` with a class of `FID_` followed by the `flightId` from the response:
+
+```html
+<div class="existing_class FID_{{flightId}}">
+  <!-- native ad HTML -->
+</div>
+```
+
+See [Automated Screenshots](/more/automated-screenshots) for more detail.

@@ -1,0 +1,124 @@
+---
+title: "Recommender Ads"
+description: "Request, serve, and report on product recommendation ads on detail and category pages."
+---
+
+import { Ui } from "/snippets/ui-ref.mdx";
+
+Recommender Ads surface relevant products to users based on their current context — typically on product detail pages (recommending similar products to the one being viewed) or on category and destination landing pages. They can be displayed within an existing "Similar Deals" container, or as a new standalone carousel.
+
+<Note>Before going live with Recommender Ads, you must supply Platform 195 with a destination/category ID mapping and a product ID list. See [Setup requirements](#setup-requirements).</Note>
+
+## Setup requirements
+
+To configure Recommender Ads, Platform 195 requires:
+
+- **Destination or category ID mapping** — a CSV or feed of all destinations/categories with their associated IDs, preferably at two levels (e.g. Country, Region, Resort).
+- **Product IDs** — a CSV or feed of all product IDs available on your site.
+
+## Requesting recommender ads
+
+POST to the recommender ad endpoint at page load. Authentication is required via headers — see [Authentication](/uplift-ads/authentication).
+
+**Endpoint:** `POST https://dev.api.upliftads.io/v3/recommender-ad`
+
+```json
+{
+  "siteId": YOUR_SITE_ID,
+  "zoneIds": [YOUR_ZONE_ID],
+  "count": 5,
+  "keywords": [
+    "Dest.{DestinationMacro}",
+    "Dep.{DepartureMacro}",
+    "MonthYear.{DateMacro}",
+    "Adults.{AdultsMacro}",
+    "Children.{ChildrenMacro}",
+    "Star.{StarRatingMacro}",
+    "ID.{ProductIDMacro}"
+  ]
+}
+```
+
+### Request parameters
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `siteId` | number | Yes | Your site ID. Provided by Platform 195. Must match the `x-site-id` header. |
+| `zoneIds` | array | Yes | Zone ID for the recommender placement. Provided by Platform 195. |
+| `count` | number | Yes | Number of product candidates to request. |
+| `keywords` | array | No | Targeting parameters reflecting the user's current context. See [keyword targeting](#keyword-targeting). |
+
+### Keyword targeting
+
+Keywords for Recommender Ads reflect both the user's search context and the specific product page they are viewing.
+
+| Targeting key | Description | Example value | Keyword format |
+|---|---|---|---|
+| `Dest` | Destination ID. Format: `{ID}-{Level}` where level is 1 = Country, 2 = Region, 3 = Resort. | Madeira | `Dest.123-2` |
+| `Dep` | Departure airport code | London Gatwick | `Dep.LGW` |
+| `MonthYear` | Travel month and year in `MMYYYY` format | April 2023 | `MonthYear.042023` |
+| `Duration` | Number of nights searched | 7 | `Duration.7` |
+| `Adults` | Number of adults | 2 | `Adults.2` |
+| `Children` | Pass `Y` if the search includes children | 1 child | `Children.Y` |
+| `Star` | Star rating of the product currently being viewed | 5 | `Star.5` |
+| `ID` | Product ID of the product currently being viewed | PTMD0020 | `ID.PTMD0020` |
+
+## Serving recommender ads
+
+The response returns a ranked list of product candidates in priority order.
+
+### Back-end
+
+The response contains `productID` values. You must merge these against your existing product feed to retrieve the content needed to render each card (image, name, price, deeplink, etc.). If no product feed exists, Platform 195 can serve static content instead.
+
+### Front-end
+
+**Nested within an existing container:** Place the Uplift-returned products into the pre-agreed positions within your existing recommended products container. Label each as `Ad` or `Sponsored`.
+
+**Standalone carousel:** If this is a new container, present products as side-by-side cards using reduced design elements from your search listings. Make it clear to users that the products are ads — for example, `Sponsored hotels we think you'll like`.
+
+### Handling empty responses
+
+If the response is empty (no relevant products found):
+
+- **Standalone container** — collapse the div so no blank space appears.
+- **Nested container** — backfill any reserved ad positions with other products from your feed.
+- **Partial response** — backfill remaining positions from your feed if fewer products are returned than available slots.
+
+## Response
+
+```json
+{
+  "decisions": {
+    "Recommender_1": [
+      {
+        "adId": 000000000,
+        "productID": "YOUR_PRODUCT_ID",
+        "campaignId": 000000000,
+        "creativeId": 000000000,
+        "flightId": 000000000,
+        "impressionUrl": "https://dev.engine.upliftads.io/i.gif?e=...",
+        "viewableImpressionUrl": "https://dev.engine.upliftads.io/e.gif?e=...",
+        "conversionUrl": "https://dev.engine.upliftads.io/e.gif?e=...",
+        "clickUrl": "https://dev.engine.upliftads.io/r?e=..."
+      }
+    ]
+  }
+}
+```
+
+## Reporting
+
+See [Tracking Ad Engagement](/uplift-ads/tracking) for full details on firing impression, click, viewable impression, and conversion tracking URLs.
+
+## Evidencing
+
+Wrap each recommender ad placement in a `div` with a class of `FID_` followed by the `flightId` from the response:
+
+```html
+<div class="existing_class FID_{{flightId}}">
+  <!-- recommender ad HTML -->
+</div>
+```
+
+See [Automated Screenshots](/more/automated-screenshots) for more detail.

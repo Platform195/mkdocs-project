@@ -1,0 +1,68 @@
+---
+title: "Uplift Ads"
+description: "Integrate server-side ad products into your digital properties using the Uplift Ads API."
+---
+
+Uplift Ads is a server-side ad server that drives ad revenue without compromising customer experience or security. Ads load rapidly and require no cookies or JavaScript tags, making the solution fully GDPR compliant out of the box.
+
+Platform 195 will work with you to determine the right ad products, placements, and sales models for your properties — whether that's CPM, CPC, duration-based tenancy, or a combination.
+
+## Ad products
+
+<CardGroup cols={2}>
+  <Card title="Native Ads" icon="rectangle-ad" href="/uplift-ads/native-ads">
+    Responsive ads custom-designed to match the style of your web content. Typically feature on channel landing and home pages.
+  </Card>
+  <Card title="Display Ads" icon="image" href="/uplift-ads/display-ads">
+    Fixed banner sizes served into containers. Ideal for search results pages with dynamic keyword targeting.
+  </Card>
+  <Card title="Sponsored Ads" icon="star" href="/uplift-ads/sponsored-ads">
+    Boost products into sponsored positions on search results pages, matched against your organic listings.
+  </Card>
+  <Card title="Recommender Ads" icon="wand-magic-sparkles" href="/uplift-ads/recommender-ads">
+    Product recommendation ads on detail pages and category pages, matched to a user's current context.
+  </Card>
+</CardGroup>
+
+## How it works
+
+Every ad product follows the same three-step pattern:
+
+<Steps>
+  <Step title="Request">
+    Your server POSTs to the Uplift Ads API at page load, passing your `zoneIds` and targeting `keywords`. Authentication is handled via headers. See [Authentication](/uplift-ads/authentication).
+  </Step>
+  <Step title="Serve">
+    Parse the JSON response and render the returned creative components or product IDs into the correct position on the page.
+  </Step>
+  <Step title="Track">
+    Fire the `impressionUrl`, `clickUrl`, and optionally `viewableImpressionUrl` and `conversionUrl` at the appropriate user events. See [Tracking Ad Engagement](/uplift-ads/tracking).
+  </Step>
+</Steps>
+
+## Environments
+
+Uplift Ads provides separate dev and production environments. Your account manager will supply your `x-api-key` and `x-site-id` for each environment. Use the dev environment for all testing; production credentials are issued once testing is complete.
+
+| Environment | Base URL |
+|---|---|
+| Dev | `https://dev.api.upliftads.io/v3/` |
+| Production | `https://api.upliftads.io/v3/` |
+
+<Note>All request and response examples in this documentation use the dev environment. Swap the base URL and credentials for production once testing is complete.</Note>
+
+## Targeting with keywords
+
+All ad products use a `keywords` array to pass targeting context with each request. Keywords follow a `Key.Value` format — for example, `Dest.123-2` or `Dep.LGW`. Platform 195 will agree the full keyword taxonomy with you during onboarding.
+
+## Evidencing ads
+
+To support automated screenshot evidence for advertisers, wrap every ad placement in a `div` with a class of `FID_` followed by the flight ID returned in the response:
+
+```html
+<div class="existing_class FID_{{flightId}}">
+  <!-- ad content -->
+</div>
+```
+
+See [Automated Screenshots](/more/automated-screenshots) for full details.

@@ -1,0 +1,131 @@
+---
+title: "Sponsored Ads"
+description: "Boost products into sponsored positions on search results pages."
+---
+
+import { Ui } from "/snippets/ui-ref.mdx";
+
+Sponsored Ads place advertiser products into sponsored positions within a search results page. A product must already exist in the organic results for the current search in order to be eligible — this ensures relevance for the user and protects customer experience.
+
+Platform 195 will work with you to determine the number of sponsored positions, placement logic, and sales model (CPC, CPM, or duration-based tenancy) that suits your search volumes.
+
+<Note>Before going live with Sponsored Ads, you must supply Platform 195 with a destination/category ID mapping and a product ID list. See [Setup requirements](#setup-requirements).</Note>
+
+## Setup requirements
+
+To configure Sponsored Ads, Platform 195 requires:
+
+- **Destination or category ID mapping** — a CSV or feed of all destinations/categories with their associated IDs, preferably at two levels (e.g. Country, Region, Resort).
+- **Product IDs** — a CSV or feed of all product IDs available on your site.
+
+## Requesting sponsored ads
+
+POST to the sponsored ad endpoint at page load. Authentication is required via headers — see [Authentication](/uplift-ads/authentication).
+
+**Endpoint:** `POST https://dev.api.upliftads.io/v3/sponsored-ad`
+
+```json
+{
+  "siteId": YOUR_SITE_ID,
+  "zoneIds": [YOUR_ZONE_ID],
+  "count": 5,
+  "keywords": [
+    "Dest.{DestinationMacro}",
+    "Dep.{DepartureMacro}",
+    "MonthYear.{DateMacro}",
+    "Adults.{AdultsMacro}",
+    "Children.{ChildrenMacro}"
+  ]
+}
+```
+
+### Request parameters
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `siteId` | number | Yes | Your site ID. Provided by Platform 195. Must match the `x-site-id` header. |
+| `zoneIds` | array | Yes | Zone ID for the sponsored positions. Provided by Platform 195. |
+| `count` | number | Yes | Number of sponsored candidates to request. Request more than the number of sponsored slots available — Platform 195 recommends requesting at least 2–3× the number of slots to maximise match rate. |
+| `keywords` | array | No | Targeting parameters reflecting the user's active search. See [keyword targeting](#keyword-targeting). |
+
+### Keyword targeting
+
+| Targeting key | Description | Example value | Keyword format |
+|---|---|---|---|
+| `Dest` | Destination ID. Format: `{ID}-{Level}` where level is 1 = Country, 2 = Region, 3 = Resort. | Madeira | `Dest.123-2` |
+| `Dep` | Departure airport code | London Gatwick | `Dep.LGW` |
+| `MonthYear` | Travel month and year in `MMYYYY` format | April 2023 | `MonthYear.042023` |
+| `Adults` | Number of adults | 2 | `Adults.2` |
+| `Children` | Pass `Y` if the search includes children | 1 child | `Children.Y` |
+
+## Serving sponsored ads
+
+The response returns a ranked list of product candidates. Work through the list **from top to bottom** and match each `productID` against the products available in the user's organic results.
+
+### Matching logic
+
+<Steps>
+  <Step title="Receive the ranked candidate list">
+    The response contains up to `count` ads ranked in priority order, each with a `productID`.
+  </Step>
+  <Step title="Map against organic listings">
+    Compare each `productID` in the response against the product IDs in the organic results for the current search, working top-to-bottom.
+  </Step>
+  <Step title="Fill sponsored positions">
+    Serve matching products into the available sponsored slots in ranked order. Stop once all slots are filled. Products that don't match the organic results, or that fall beyond the available slots, are not shown.
+  </Step>
+  <Step title="Label as sponsored">
+    Any product shown in a sponsored position must be clearly labelled as paid — for example, with a `Sponsored` or `Ad` badge.
+  </Step>
+</Steps>
+
+### Handling filter events
+
+When a user applies a filter to the results, **do not make a new request to Uplift**. Instead, re-apply the matching logic using the original ranked response from the initial page load:
+
+- If a sponsored product **remains in the filtered results**, keep it in its sponsored position and fire its `impressionUrl` again.
+- If a sponsored product **is removed by the filter**, work down the original ranked list to find the next matching product and promote it into the sponsored slot.
+
+<Tip>Each time sponsored positions are displayed after a filter is applied, an impression must be counted for each ad shown.</Tip>
+
+## Response
+
+```json
+{
+  "decisions": {
+    "Sponsored_1": [
+      {
+        "adId": 000000000,
+        "productID": "YOUR_PRODUCT_ID",
+        "campaignId": 000000000,
+        "creativeId": 000000000,
+        "flightId": 000000000,
+        "impressionUrl": "https://dev.engine.upliftads.io/i.gif?e=...",
+        "viewableImpressionUrl": "https://dev.engine.upliftads.io/e.gif?e=...",
+        "conversionUrl": "https://dev.engine.upliftads.io/e.gif?e=...",
+        "clickUrl": "https://dev.engine.upliftads.io/r?e=..."
+      }
+    ]
+  }
+}
+```
+
+### The `clickUrl`
+
+The `clickUrl` serves a dual purpose — it acts as both a **click counter** and a **redirect**. For Sponsored Ads, clicking a product should navigate the user to that product's detail page on your site. You do not need to redirect via the `clickUrl` for Sponsored Ads — instead, fire it as a GET request when the user clicks, and handle the navigation yourself.
+
+## Reporting
+
+See [Tracking Ad Engagement](/uplift-ads/tracking) for full details on firing impression, click, viewable impression, and conversion tracking URLs.
+
+## Evidencing
+
+Wrap each sponsored ad placement in a `div` with a class of `FID_` followed by the `flightId` from the response:
+
+```html
+<div class="existing_class FID_{{flightId}}">
+  <!-- sponsored product HTML -->
+</div>
+```
+
+See [Automated Screenshots](/more/automated-screenshots) for more detail.
