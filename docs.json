@@ -106,6 +106,33 @@
         ]
       },
       {
+        "tab": "Uplift Ads",
+        "groups": [
+          {
+            "group": "Uplift Ads",
+            "pages": [
+              "uplift-ads/uplift-ads-overview",
+              "uplift-ads/authentication"
+            ]
+          },
+          {
+            "group": "Ad formats",
+            "pages": [
+              "uplift-ads/native-ads",
+              "uplift-ads/display-ads",
+              "uplift-ads/sponsored-ads",
+              "uplift-ads/recommender-ads"
+            ]
+          },
+          {
+            "group": "Implementation",
+            "pages": [
+              "uplift-ads/tracking"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Reference",
         "groups": [
           {
