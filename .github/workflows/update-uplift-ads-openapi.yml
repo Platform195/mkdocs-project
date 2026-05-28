@@ -1,0 +1,27 @@
+name: Update Uplift Ads OpenAPI spec
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Uplift Ads OpenAPI spec
+        run: curl -fsSL https://api.upliftads.io/v3/swagger.json -o uplift-ads-openapi-raw.json
+
+      - name: Clean up spec
+        run: node fix-uplift-ads-openapi.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add uplift-ads-openapi.json
+          git diff --cached --quiet || git commit -m "chore: update Uplift Ads OpenAPI spec"
+          git pull --rebase origin main
+          git push
