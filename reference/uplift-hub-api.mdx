@@ -1,0 +1,62 @@
+---
+title: Getting started with the Uplift Hub API
+description: How to get access to the Uplift Hub API and authenticate your requests.
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+The Uplift Hub API lets you create and update accounts, campaigns, line items,
+products, and documents programmatically — useful for integrating Uplift Hub
+with your own systems, CRMs, or booking platforms.
+
+<Note>
+  Looking for the ad-server API? The Uplift Ads API handles ad decisions and
+  delivery. See [Getting started with the Uplift Ads API](/uplift-ads-api/getting-started).
+</Note>
+
+---
+
+## Getting access
+
+The API is not enabled by default. Contact your Platform 195 account manager
+to enable it for your account and receive an API key.
+
+<Note>
+  No account manager yet? Email [support@uplifthub.io](mailto:support@uplifthub.io).
+</Note>
+
+---
+
+## Authentication
+
+Every request must include your API key as a header:
+
+```http
+X-apikey: YOUR_API_KEY
+```
+
+Requests without a valid key are rejected.
+
+**Example using curl:**
+
+```bash
+curl -X GET "https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/ListCampaigns" \
+  -H "X-apikey: YOUR_API_KEY"
+```
+
+---
+
+## Regenerating your API key
+
+If your key is compromised, contact your Platform 195 account manager to rotate it.
+
+<Warning>
+  Regenerating your key immediately invalidates all existing keys for your
+  account. Any integrations using the old key will stop working until updated.
+</Warning>
+
+---
+
+## Base URL
+
+All endpoints are relative to:
