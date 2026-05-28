@@ -134,6 +134,18 @@
             "pages": [
               "uplift-ads-api/getting-started"
             ]
+          },
+          {
+            "group": "Uplift Ads",
+            "pages": [
+              "uplift-ads/uplift-ads-overview",
+              "uplift-ads/authentication",
+              "uplift-ads/native-ads",
+              "uplift-ads/sponsored-ads",
+              "uplift-ads/recommender-ads",
+              "uplift-ads/display-ads",
+              "uplift-ads/tracking"
+            ]
           }
         ],
         "openapi": "/uplift-ads-openapi.json"
