@@ -22,10 +22,7 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@uplifthub.io"
-      }
+      { "label": "Support", "href": "mailto:support@uplifthub.io" }
     ],
     "primary": {
       "type": "button",
@@ -106,39 +103,11 @@
         ]
       },
       {
-        "tab": "Uplift Ads",
-        "groups": [
-          {
-            "group": "Uplift Ads",
-            "pages": [
-              "uplift-ads/uplift-ads-overview",
-              "uplift-ads/authentication"
-            ]
-          },
-          {
-            "group": "Ad formats",
-            "pages": [
-              "uplift-ads/native-ads",
-              "uplift-ads/display-ads",
-              "uplift-ads/sponsored-ads",
-              "uplift-ads/recommender-ads"
-            ]
-          },
-          {
-            "group": "Implementation",
-            "pages": [
-              "uplift-ads/tracking"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Reference",
         "groups": [
           {
             "group": "Reference",
             "pages": [
-              "reference/api-getting-started",
               "reference/glossary",
               "reference/support"
             ]
@@ -146,11 +115,37 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Uplift Hub API",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "reference/uplift-hub-api"
+            ]
+          }
+        ],
         "openapi": "/openapi.json"
+      },
+      {
+        "tab": "Uplift Ads API",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "uplift-ads-api/getting-started"
+            ]
+          }
+        ],
+        "openapi": "/uplift-ads-openapi.json"
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/reference/api-getting-started",
+      "destination": "/reference/uplift-hub-api"
+    }
+  ],
   "search": {
     "prompt": "Search the docs…"
   },

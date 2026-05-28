@@ -1,0 +1,64 @@
+---
+title: Getting started with the Uplift Ads API
+description: How to authenticate and make ad-decision requests using the Uplift Ads API.
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+The Uplift Ads API is the ad-server layer of the Platform 195 stack. Where the
+Uplift Hub API manages your campaign data model — accounts, campaigns, and line
+items — the Uplift Ads API handles delivery: requesting ad decisions for your
+placements in real time.
+
+<Note>
+  Looking for the campaign management API? See
+  [Getting started with the Uplift Hub API](/reference/uplift-hub-api).
+</Note>
+
+---
+
+## Which API do I need?
+
+| Task | API |
+|---|---|
+| Create or update accounts, campaigns, line items | [Uplift Hub API](/reference/uplift-hub-api) |
+| Request a Native ad decision | Uplift Ads API — `POST /native-ad` |
+| Request a Sponsored ad decision | Uplift Ads API — `POST /sponsored-ad` |
+| Request a Recommender ad decision | Uplift Ads API — `POST /recommender-ad` |
+| Request a Display ad decision | Uplift Ads API — `POST /display-ad` |
+
+---
+
+## Getting access
+
+Access to the Uplift Ads API is managed separately from the Uplift Hub API.
+Contact your Platform 195 account manager to request credentials — they will
+provide you with an API key and your Site ID.
+
+<Note>
+  No account manager yet? Email [support@uplifthub.io](mailto:support@uplifthub.io).
+</Note>
+
+---
+
+## Authentication
+
+Every request requires two headers:
+
+| Header | Description |
+|---|---|
+| `x-api-key` | Your Uplift Ads API key |
+| `x-site-id` | Your numeric Site ID |
+
+```http
+x-api-key: YOUR_API_KEY
+x-site-id: 12345
+```
+
+Requests without both headers will be rejected.
+
+---
+
+## Base URL
+
+All endpoints are relative to:
