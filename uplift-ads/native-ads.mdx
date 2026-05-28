@@ -3,8 +3,6 @@ title: "Native Ads"
 description: "Request, serve, and report on responsive native ad placements."
 ---
 
-import { Ui } from "ui.mdx";
-
 Native ads are responsive placements custom-designed to match the style and layout of your web content. They typically appear on channel landing pages — such as your homepage, destination pages, or category pages — and are targeted by page context using keywords.
 
 Platform 195 will recommend placement positions after reviewing your web properties. Once agreed, the CSS and HTML can be built to match the responsive behaviour of your content, or Platform 195 can build this for you.
@@ -45,7 +43,7 @@ Include a `Page.` prefixed keyword matching the current page to target ads conte
 
 ## Response
 
-A successful response contains ad metadata, tracking URLs, and a `creativeContent` object with the components needed to render the ad.
+A successful response contains ad metadata, tracking URLs, and a `creativeContent` array with the components needed to render the ad.
 
 ```json
 {
@@ -72,7 +70,7 @@ A successful response contains ad metadata, tracking URLs, and a `creativeConten
 
 ### Creative components
 
-The `creativeContent` object contains the individual components of the ad creative — things like images, headings, and a destination URL. The specific components available vary per campaign and are agreed with Platform 195 during onboarding. Your HTML template should be built to map these components into the correct positions.
+The `creativeContent` array contains the individual components of the ad creative — things like images, headings, and a destination URL. The specific components available vary per campaign and are agreed with Platform 195 during onboarding. Your HTML template should be built to map these components into the correct positions.
 
 <Note>Platform 195 will provide a full list of the creative components configured for your implementation, along with guidance on how to map them to your HTML template.</Note>
 
@@ -100,5 +98,3 @@ Wrap each native ad placement in a `div` with a class of `FID_` followed by the 
   <!-- native ad HTML -->
 </div>
 ```
-
-See [Automated Screenshots](/more/automated-screenshots) for more detail.

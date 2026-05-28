@@ -62,3 +62,24 @@ Requests without both headers will be rejected.
 ## Base URL
 
 All endpoints are relative to:
+https://api.upliftads.io/v3
+
+---
+
+## Ad types
+
+| Endpoint | Format | Use when |
+|---|---|---|
+| `POST /native-ad` | Native | Rendering ads that match surrounding content — headline, image, and CTA |
+| `POST /sponsored-ad` | Sponsored | Surfacing sponsored products within search or browse results |
+| `POST /recommender-ad` | Recommender | Showing AI-ranked product recommendations in a carousel or grid |
+| `POST /display-ad` | Display | Serving banner or rich-media creatives at a fixed size |
+
+---
+
+## Next steps
+
+Browse the [Uplift Ads API Reference](/uplift-ads-api-reference) tab for the
+full interactive endpoint documentation, including request and response schemas.
+For implementation guides covering each ad format in detail, see the
+[Uplift Ads](/uplift-ads/uplift-ads-overview) section.

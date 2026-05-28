@@ -3,8 +3,6 @@ title: "Sponsored Ads"
 description: "Boost products into sponsored positions on search results pages."
 ---
 
-import { Ui } from "ui.mdx";
-
 Sponsored Ads place advertiser products into sponsored positions within a search results page. A product must already exist in the organic results for the current search in order to be eligible — this ensures relevance for the user and protects customer experience.
 
 Platform 195 will work with you to determine the number of sponsored positions, placement logic, and sales model (CPC, CPM, or duration-based tenancy) that suits your search volumes.
@@ -112,7 +110,7 @@ When a user applies a filter to the results, **do not make a new request to Upli
 
 ### The `clickUrl`
 
-The `clickUrl` serves a dual purpose — it acts as both a **click counter** and a **redirect**. For Sponsored Ads, clicking a product should navigate the user to that product's detail page on your site. You do not need to redirect via the `clickUrl` for Sponsored Ads — instead, fire it as a GET request when the user clicks, and handle the navigation yourself.
+For Sponsored Ads, clicking a product should navigate the user to that product's detail page on your site. You do not need to redirect via the `clickUrl` — instead, fire it as a GET request when the user clicks, and handle the navigation yourself.
 
 ## Reporting
 
@@ -127,5 +125,3 @@ Wrap each sponsored ad placement in a `div` with a class of `FID_` followed by t
   <!-- sponsored product HTML -->
 </div>
 ```
-
-See [Automated Screenshots](/more/automated-screenshots) for more detail.

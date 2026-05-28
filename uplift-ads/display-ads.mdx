@@ -3,8 +3,6 @@ title: "Display Ads"
 description: "Request, serve, and report on fixed-size display banner placements."
 ---
 
-import { Ui } from "ui.mdx";
-
 Display ads are fixed banner sizes served into containers on the relevant page. Platform 195 will map the appropriate banner sizes to each viewport (desktop, tablet, mobile) during the recommendation stage — this is handled using the `adTypes` parameter.
 
 Display ads work across any digital page. They are particularly effective on search results pages, where dynamic keyword targeting can be applied based on the user's active search criteria.
@@ -72,20 +70,11 @@ A successful response contains the banner dimensions and image URL to render.
         "campaignId": 000000000,
         "clickUrl": "https://dev.engine.upliftads.io/r?e=...",
         "impressionUrl": "https://dev.engine.upliftads.io/i.gif?e=...",
-        "contents": [
+        "content": [
           {
-            "type": "raw",
-            "data": {
-              "height": 250,
-              "width": 300,
-              "imageUrl": "https://cdn.upliftads.io/path/to/banner.jpg"
-            }
-          }
-        ],
-        "events": [
-          {
-            "id": 40,
-            "url": "https://dev.engine.upliftads.io/e.gif?e=..."
+            "height": 250,
+            "width": 300,
+            "imageUrl": "https://cdn.upliftads.io/path/to/banner.jpg"
           }
         ]
       }
@@ -98,10 +87,10 @@ A successful response contains the banner dimensions and image URL to render.
 
 | Field | Description |
 |---|---|
-| `contents[].data.height` | Banner height in pixels. |
-| `contents[].data.width` | Banner width in pixels. |
-| `contents[].data.imageUrl` | URL of the banner image to render. |
-| `events[id=40].url` | Viewable impression tracking URL. |
+| `content[].height` | Banner height in pixels. |
+| `content[].width` | Banner width in pixels. |
+| `content[].imageUrl` | URL of the banner image to render. |
+| `viewableImpressionUrl` | Fire when the ad enters the viewport. |
 
 ### The `clickUrl`
 
@@ -127,5 +116,3 @@ Wrap each display ad placement in a `div` with a class of `FID_` followed by the
   <!-- display ad HTML -->
 </div>
 ```
-
-See [Automated Screenshots](/more/automated-screenshots) for more detail.
