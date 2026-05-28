@@ -1,0 +1,937 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Uplift Ad API",
+        "description": "API for the Uplift Ad API",
+        "version": "v3"
+    },
+    "servers": [
+        {
+            "url": "https://api.upliftads.io/v3"
+        }
+    ],
+    "paths": {
+        "/native-ad": {
+            "post": {
+                "summary": "Get Native Ad",
+                "description": "Request one or more native ad decisions for the specified zones. Returns headline, image, and click-through content ready to render inline with surrounding content.",
+                "operationId": "getnativeAd",
+                "parameters": [
+                    {
+                        "name": "x-api-key",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "x-site-id",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/nativeAdRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/nativeAdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request, check the request body"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                },
+                "tags": [
+                    "Ad Decisions"
+                ]
+            }
+        },
+        "/recommender-ad": {
+            "post": {
+                "summary": "Get Recommender Ad",
+                "description": "Request one or more recommender ad decisions for the specified zones. Returns ranked product recommendations suitable for a carousel or grid layout.",
+                "operationId": "getrecommenderAd",
+                "parameters": [
+                    {
+                        "name": "x-api-key",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "x-site-id",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/recommenderAdRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/recommenderAdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request, check the request body"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                },
+                "tags": [
+                    "Ad Decisions"
+                ]
+            }
+        },
+        "/sponsored-ad": {
+            "post": {
+                "summary": "Get Sponsored Ad",
+                "description": "Request one or more sponsored ad decisions for the specified zones. Typically used to surface sponsored products or listings within search or browse results.",
+                "operationId": "getsponsoredAd",
+                "parameters": [
+                    {
+                        "name": "x-api-key",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "x-site-id",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/sponsoredAdRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/sponsoredAdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request, check the request body"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                },
+                "tags": [
+                    "Ad Decisions"
+                ]
+            }
+        },
+        "/display-ad": {
+            "post": {
+                "summary": "Get Display Ad",
+                "description": "Request one or more display ad decisions for the specified zones. Returns sized image assets for banner or rich-media creatives.",
+                "operationId": "getdisplayAd",
+                "parameters": [
+                    {
+                        "name": "x-api-key",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "x-site-id",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/displayAdRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/displayAdResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request, check the request body"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                },
+                "tags": [
+                    "Ad Decisions"
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "nativeAdRequest": {
+                "type": "object",
+                "properties": {
+                    "siteId": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Your site ID. Can be passed here instead of the x-site-id header."
+                    },
+                    "zoneIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "description": "One or more zone IDs to request decisions for."
+                    },
+                    "count": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Maximum number of ads to return per zone."
+                    },
+                    "keywords": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Keyword signals used for targeting — e.g. destination names or product categories."
+                    },
+                    "eventIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                "label": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "label"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Contextual event identifiers for the current page or session."
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "The end-user's IP address, used for geo-targeting."
+                    },
+                    "user": {
+                        "type": "string",
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "consentGDPR": {
+                        "type": "boolean",
+                        "description": "Whether the user has given GDPR consent."
+                    },
+                    "customTargeting": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number",
+                                                "format": "float"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "Freeform key-value targeting parameters. Values can be strings, numbers, or arrays of either."
+                    }
+                },
+                "required": [
+                    "zoneIds",
+                    "keywords"
+                ],
+                "additionalProperties": false
+            },
+            "nativeAdResponse": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "decisions": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "adId": {
+                                        "type": "integer"
+                                    },
+                                    "campaignId": {
+                                        "type": "string"
+                                    },
+                                    "creativeId": {
+                                        "type": "string"
+                                    },
+                                    "flightId": {
+                                        "type": "string"
+                                    },
+                                    "priorityId": {
+                                        "type": "string"
+                                    },
+                                    "impressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "viewableImpressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "clickUrl": {
+                                        "type": "string"
+                                    },
+                                    "creativeContent": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "ctclickthrough": {
+                                                    "type": "string"
+                                                },
+                                                "ctimage": {
+                                                    "type": "string"
+                                                },
+                                                "ctheading1": {
+                                                    "type": "string"
+                                                },
+                                                "ctheading2": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        }
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
+            "recommenderAdRequest": {
+                "type": "object",
+                "properties": {
+                    "siteId": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Your site ID. Can be passed here instead of the x-site-id header."
+                    },
+                    "zoneIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "description": "One or more zone IDs to request decisions for."
+                    },
+                    "count": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Maximum number of ads to return per zone."
+                    },
+                    "keywords": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Keyword signals used for targeting — e.g. destination names or product categories."
+                    },
+                    "eventIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                "label": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "label"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Contextual event identifiers for the current page or session."
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "The end-user's IP address, used for geo-targeting."
+                    },
+                    "user": {
+                        "type": "string",
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "consentGDPR": {
+                        "type": "boolean",
+                        "description": "Whether the user has given GDPR consent."
+                    },
+                    "customTargeting": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number",
+                                                "format": "float"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "Freeform key-value targeting parameters. Values can be strings, numbers, or arrays of either."
+                    }
+                },
+                "required": [
+                    "zoneIds",
+                    "keywords"
+                ],
+                "additionalProperties": false
+            },
+            "recommenderAdResponse": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "decisions": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "productID": {
+                                        "type": "string"
+                                    },
+                                    "adId": {
+                                        "type": "integer"
+                                    },
+                                    "creativeId": {
+                                        "type": "integer"
+                                    },
+                                    "flightId": {
+                                        "type": "integer"
+                                    },
+                                    "campaignId": {
+                                        "type": "integer"
+                                    },
+                                    "advertiserId": {
+                                        "type": "integer"
+                                    },
+                                    "priorityId": {
+                                        "type": "integer"
+                                    },
+                                    "clickUrl": {
+                                        "type": "string"
+                                    },
+                                    "impressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "viewableImpressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "conversionUrl": {
+                                        "type": "string"
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
+            "sponsoredAdRequest": {
+                "type": "object",
+                "properties": {
+                    "siteId": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Your site ID. Can be passed here instead of the x-site-id header."
+                    },
+                    "zoneIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "description": "One or more zone IDs to request decisions for."
+                    },
+                    "count": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Maximum number of ads to return per zone."
+                    },
+                    "keywords": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Keyword signals used for targeting — e.g. destination names or product categories."
+                    },
+                    "eventIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                "label": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "label"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Contextual event identifiers for the current page or session."
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "The end-user's IP address, used for geo-targeting."
+                    },
+                    "user": {
+                        "type": "string",
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "consentGDPR": {
+                        "type": "boolean",
+                        "description": "Whether the user has given GDPR consent."
+                    },
+                    "customTargeting": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number",
+                                                "format": "float"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "Freeform key-value targeting parameters. Values can be strings, numbers, or arrays of either."
+                    }
+                },
+                "required": [
+                    "zoneIds",
+                    "keywords"
+                ],
+                "additionalProperties": false
+            },
+            "sponsoredAdResponse": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "decisions": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "productID": {
+                                        "type": "string"
+                                    },
+                                    "adId": {
+                                        "type": "integer"
+                                    },
+                                    "creativeId": {
+                                        "type": "integer"
+                                    },
+                                    "flightId": {
+                                        "type": "integer"
+                                    },
+                                    "campaignId": {
+                                        "type": "integer"
+                                    },
+                                    "advertiserId": {
+                                        "type": "integer"
+                                    },
+                                    "priorityId": {
+                                        "type": "integer"
+                                    },
+                                    "clickUrl": {
+                                        "type": "string"
+                                    },
+                                    "impressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "viewableImpressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "conversionUrl": {
+                                        "type": "string"
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
+            "displayAdRequest": {
+                "type": "object",
+                "properties": {
+                    "siteId": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Your site ID. Can be passed here instead of the x-site-id header."
+                    },
+                    "zoneIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "description": "One or more zone IDs to request decisions for."
+                    },
+                    "adTypes": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "description": "Ad type IDs specifying the accepted creative formats. Required for display ads."
+                    },
+                    "count": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Maximum number of ads to return per zone."
+                    },
+                    "keywords": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Keyword signals used for targeting — e.g. destination names or product categories."
+                    },
+                    "eventIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                "label": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "label"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Contextual event identifiers for the current page or session."
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "The end-user's IP address, used for geo-targeting."
+                    },
+                    "user": {
+                        "type": "string",
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "consentGDPR": {
+                        "type": "boolean",
+                        "description": "Whether the user has given GDPR consent."
+                    },
+                    "customTargeting": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "oneOf": [
+                                            {
+                                                "type": "string"
+                                            },
+                                            {
+                                                "type": "number",
+                                                "format": "float"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "Freeform key-value targeting parameters. Values can be strings, numbers, or arrays of either."
+                    }
+                },
+                "required": [
+                    "zoneIds",
+                    "adTypes",
+                    "keywords"
+                ],
+                "additionalProperties": false
+            },
+            "displayAdResponse": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "description": "A stable user identifier for frequency capping and personalisation."
+                    },
+                    "decisions": {
+                        "type": "object",
+                        "properties": {},
+                        "additionalProperties": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "adId": {
+                                        "type": "integer"
+                                    },
+                                    "creativeId": {
+                                        "type": "integer"
+                                    },
+                                    "flightId": {
+                                        "type": "integer"
+                                    },
+                                    "campaignId": {
+                                        "type": "integer"
+                                    },
+                                    "advertiserId": {
+                                        "type": "integer"
+                                    },
+                                    "priorityId": {
+                                        "type": "integer"
+                                    },
+                                    "clickUrl": {
+                                        "type": "string"
+                                    },
+                                    "impressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "viewableImpressionUrl": {
+                                        "type": "string"
+                                    },
+                                    "content": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "height": {
+                                                    "type": "integer"
+                                                },
+                                                "width": {
+                                                    "type": "integer"
+                                                },
+                                                "imageUrl": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        }
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        }
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "x-api-key"
+            }
+        }
+    },
+    "security": [
+        {
+            "ApiKeyAuth": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Ad Decisions"
+        }
+    ]
+}
