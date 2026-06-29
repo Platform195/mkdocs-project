@@ -1,22 +1,24 @@
 name: Update OpenAPI spec
-
 on:
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:
-
 jobs:
   convert:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-
+      - name: Download Swagger spec
+        run: |
+          for i in 1 2 3; do
+            curl -fL https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json -o swagger.json && break
+            echo "Attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
       - name: Convert Swagger 2.0 → OpenAPI 3.0
-        run: npx --yes swagger2openapi https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json -o openapi.json
-
+        run: npx --yes swagger2openapi swagger.json -o openapi.json
       - name: Fix server URL, group tags and endpoint names
         run: node fix-openapi.js
-
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
