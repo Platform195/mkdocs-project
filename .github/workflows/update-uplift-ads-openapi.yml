@@ -9,7 +9,7 @@ jobs:
   convert:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Fetch Uplift Ads OpenAPI spec
         run: curl -fsSL https://api.upliftads.io/v3/swagger.json -o uplift-ads-openapi-raw.json
