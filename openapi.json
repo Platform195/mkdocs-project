@@ -1,16 +1,5 @@
 {
     "openapi": "3.0.0",
-    "x-origin": [
-        {
-            "url": "https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json",
-            "format": "swagger",
-            "version": "2.0",
-            "converter": {
-                "url": "https://github.com/mermade/oas-kit",
-                "version": "7.0.8"
-            }
-        }
-    ],
     "info": {
         "title": "V1",
         "description": "",
