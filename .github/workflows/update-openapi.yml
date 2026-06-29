@@ -9,7 +9,7 @@ jobs:
   convert:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Convert Swagger 2.0 → OpenAPI 3.0
         run: npx --yes swagger2openapi https://app.uplifthub.io/P195_Exposed_Integrations/rest/V1/swagger.json -o openapi.json
