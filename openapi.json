@@ -605,6 +605,60 @@
                 "summary": "Create Product"
             }
         },
+        "/Reporting": {
+            "post": {
+                "tags": [
+                    "Reporting"
+                ],
+                "description": "",
+                "operationId": "Reporting",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "example": 0,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "example": 0,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ReportingRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ReportingResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Run Report"
+            }
+        },
         "/SYS_CreateCampaignNotification": {
             "post": {
                 "tags": [
@@ -656,6 +710,9 @@
         },
         {
             "name": "Source Markets"
+        },
+        {
+            "name": "Reporting"
         },
         {
             "name": "System"
@@ -1179,6 +1236,215 @@
                     }
                 }
             },
+            "DatumItem": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "line_item_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "client_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "account_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "campaign_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "product_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "line_item_name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "assignees": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "partner_discount": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "partner_rate": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "fulfillment_cost": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "line_item_budget": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "line_item_fulfillment": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "line_item_status": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "start_date": {
+                        "$ref": "#/components/schemas/Start_date"
+                    },
+                    "end_date": {
+                        "$ref": "#/components/schemas/Start_date"
+                    },
+                    "product_name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "source_market": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "source_market_abbreviation": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "product_description": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "platform": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "channel": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "format_aspect": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "cost_basis_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "rate_card": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "minimum_partner_budget": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "mark_up": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "mark_up_value": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "source_market_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "campaign_name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "campaign_type": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "campaign_managers_id": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "campaign_budget": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "campaign_brief_field_id": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "campaign_status": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "account_name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "account_type": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "contacts": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "sales_manager": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "product_ids": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "client_name": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "url": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "impressions": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "clicks": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "spend": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "conversions": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "completion_capped": {
+                        "type": "number",
+                        "example": 0.1
+                    },
+                    "pacing": {
+                        "type": "number",
+                        "example": 0.1
+                    }
+                }
+            },
             "DocumentTypeResponse": {
                 "description": "Document Type",
                 "type": "object",
@@ -1456,6 +1722,32 @@
                     }
                 }
             },
+            "Pagination": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    },
+                    "pages": {
+                        "type": "integer",
+                        "example": 1234567891234567,
+                        "format": "int64"
+                    }
+                }
+            },
             "ProductResponse": {
                 "description": "",
                 "type": "object",
@@ -1484,6 +1776,103 @@
                     "ExternalId",
                     "Description"
                 ]
+            },
+            "ReportingRequest": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "Columns": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "line_item_id",
+                                "client_id",
+                                "account_id",
+                                "campaign_id",
+                                "product_id",
+                                "line_item_name",
+                                "assignees",
+                                "partner_discount",
+                                "quantity",
+                                "partner_rate",
+                                "fulfillment_cost",
+                                "line_item_budget",
+                                "line_item_fulfillment",
+                                "media_cost",
+                                "ecpm",
+                                "line_item_status",
+                                "start_date",
+                                "end_date",
+                                "product_name",
+                                "source_market",
+                                "source_market_abbreviation",
+                                "product_description",
+                                "platform",
+                                "channel",
+                                "format_aspect",
+                                "cost_basis_id",
+                                "rate_card",
+                                "minimum_partner_budget",
+                                "mark_up",
+                                "mark_up_value",
+                                "source_market_id",
+                                "campaign_name",
+                                "campaign_type",
+                                "campaign_managers_id",
+                                "package",
+                                "package_fixed_commitment_total",
+                                "package_blended_total_commitment",
+                                "campaign_budget",
+                                "campaign_brief_field_id",
+                                "campaign_status",
+                                "account_name",
+                                "account_type",
+                                "contacts",
+                                "sales_manager",
+                                "product_ids",
+                                "client_name",
+                                "url",
+                                "impressions",
+                                "clicks",
+                                "spend",
+                                "conversions",
+                                "completion_capped",
+                                "pacing",
+                                "line_item_tags",
+                                "campaign_tags",
+                                "all_tags"
+                            ]
+                        },
+                        "description": "Columns to include in the report. Reporting is at line item level — each row returned represents a single line item, and every column describes that line item or the campaign/account/product it belongs to. Valid values:\n\n- `line_item_id`: Unique numeric ID of this line item.\n- `client_id`: Unique numeric ID of the client associated with this line item.\n- `account_id`: Unique numeric ID of the account (partner) associated with this line item.\n- `campaign_id`: Unique numeric ID of the campaign this line item belongs to.\n- `product_id`: Unique numeric ID of the product booked on this line item.\n- `line_item_name`: Display name of this line item.\n- `assignees`: JSON string array of users assigned to this line item, each with `name` and `role`.\n- `partner_discount`: Discount percentage applied to the partner rate on this line item.\n- `quantity`: Number of units/placements booked on this line item.\n- `partner_rate`: Rate charged to the partner for this line item.\n- `fulfillment_cost`: Internal cost to fulfil this line item.\n- `line_item_budget`: Total budget allocated to this line item.\n- `line_item_fulfillment`: Amount fulfilled against this line item's budget so far.\n- `media_cost`: Media cost associated with this line item, if applicable.\n- `ecpm`: Effective cost per mille (CPM) for this line item, if applicable.\n- `line_item_status`: Current status label of this line item (e.g. Complete, Live).\n- `start_date`: Start date of this line item.\n- `end_date`: End date of this line item.\n- `product_name`: Name of the product booked on this line item.\n- `source_market`: Name of the source market the parent campaign originates from.\n- `source_market_abbreviation`: Abbreviation of the source market the parent campaign originates from.\n- `product_description`: Description of the product booked on this line item.\n- `platform`: Platform this line item runs on (e.g. On-Site).\n- `channel`: Channel of the product booked on this line item.\n- `format_aspect`: Ad format/aspect spec for the product booked on this line item.\n- `cost_basis_id`: ID of the cost basis used to price the product on this line item (e.g. CPM, flat fee).\n- `rate_card`: Standard rate card price for the product booked on this line item.\n- `minimum_partner_budget`: Minimum partner budget required for the product booked on this line item.\n- `mark_up`: Whether a mark-up is applied to the product on this line item.\n- `mark_up_value`: Mark-up percentage/value applied on this line item, if any.\n- `source_market_id`: Unique numeric ID of the source market the parent campaign originates from.\n- `campaign_name`: Display name of the campaign this line item belongs to.\n- `campaign_type`: Type of the campaign this line item belongs to (e.g. Custom Campaign).\n- `campaign_managers_id`: ID of the campaign manager assigned to the parent campaign.\n- `package`: Name of the package the parent campaign/line item belongs to, if part of a package deal.\n- `package_fixed_commitment_total`: Total fixed commitment value for the package, if this line item is part of one.\n- `package_blended_total_commitment`: Total blended commitment value for the package, if this line item is part of one.\n- `campaign_budget`: Total budget for the campaign this line item belongs to.\n- `campaign_brief_field_id`: Comma-separated IDs of the brief fields on the parent campaign.\n- `campaign_status`: Current status of the campaign this line item belongs to (e.g. Closed).\n- `account_name`: Name of the account (partner) associated with this line item.\n- `account_type`: Type of the account associated with this line item (e.g. Tourist Board).\n- `contacts`: JSON string of contact details for the account associated with this line item.\n- `sales_manager`: Name of the sales manager on the account associated with this line item.\n- `product_ids`: JSON array of all product IDs available to the account associated with this line item.\n- `client_name`: Name of the client associated with this line item.\n- `url`: Direct link to this line item's detail page in Uplift Hub.\n- `impressions`: Total impressions delivered for this line item.\n- `clicks`: Total clicks delivered for this line item.\n- `spend`: Total spend recorded against this line item.\n- `conversions`: Total conversions recorded for this line item.\n- `completion_capped`: Delivery completion percentage for this line item, capped at 100.\n- `pacing`: Delivery pacing percentage for this line item, relative to plan.\n- `line_item_tags`: Tags applied directly to this line item.\n- `campaign_tags`: Tags applied to the campaign this line item belongs to.\n- `all_tags`: Combined tags from both this line item and its parent campaign."
+                    }
+                }
+            },
+            "ReportingResponse": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DatumItem"
+                        }
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/Pagination"
+                    }
+                }
+            },
+            "Start_date": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2014-12-31"
+                    }
+                }
             },
             "SYS_CreateCampaignNotification": {
                 "description": "",
