@@ -1,31 +1,115 @@
 ---
 title: Sharing preview links
-description: How to generate and share a public preview link for a campaign's creatives, and how advertisers approve or reject them.
+description: How to generate a public preview link from a line item or campaign, how approvers review creatives, and how to track their feedback.
 ---
 
 import { Ui } from "/snippets/ui.mdx";
 
-A public preview link lets you share selected creatives with an advertiser for approval — no Uplift Hub account required. You choose exactly which line items and creatives to include before generating the link, so you can share a targeted subset rather than the entire campaign.
+A public preview link lets you share selected creatives with an advertiser or approver. They don't need an Uplift Hub account to open it. You can generate a link from a single line item's **Creatives** tab, or from the campaign's **Creatives** tab when you want to share creatives from several line items at once. Every link is logged in **Public Preview History**, so you can see who has responded and whether they are looking at the latest version.
+
+---
+
+## Create a preview from a line item
+
+Use this when you want sign-off on the creatives for one line item.
+
+<Steps>
+  <Step title="Open the line item Creatives tab">
+    Navigate to the line item and click the <Ui>Creatives</Ui> tab.
+  </Step>
+  <Step title="Select the creatives to share">
+    Tick the checkbox next to each creative you want to include, or tick the checkbox in the header row to select them all. An action bar appears at the bottom of the screen showing how many creatives are selected.
+
+    <Frame caption="Selecting a creative opens the action bar at the bottom of the screen.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/public-preview-select-creatives.png" alt="Line item Creatives tab with one creative selected and the action bar showing Edit, Duplicate and Public preview" />
+    </Frame>
+  </Step>
+  <Step title="Click Public preview">
+    Click <Ui>Public preview</Ui> in the action bar. The **Create Public Preview** window opens.
+  </Step>
+  <Step title="Choose whether approvers can give feedback">
+    Turn on <Ui>Allow approval & feedback</Ui> if you want recipients to approve or reject each creative and leave comments. Leave it off to share a view-only preview.
+
+    <Frame caption="Turn on Allow approval & feedback to collect sign-off, or leave it off for a view-only preview.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/public-preview-create-modal.png" alt="Create Public Preview window with the Allow approval & feedback toggle" />
+    </Frame>
+  </Step>
+  <Step title="Generate and copy the link">
+    Click <Ui>Generate Link</Ui>. Once the link is ready, click the **Copy** icon next to it and send it to your approver by email or any other channel. Click <Ui>Create Another</Ui> if you need a separate link for a different set of creatives.
+
+    <Frame caption="The link is ready to copy and share.">
+      <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/public-preview-link-generated.png" alt="Link Generated Successfully confirmation with the preview URL and copy button" />
+    </Frame>
+  </Step>
+</Steps>
+
+---
+
+## Create a preview from a campaign
+
+Use this when you want to share creatives from several line items in one link.
 
 <Steps>
   <Step title="Open the campaign Creatives tab">
     Navigate to the campaign and click the <Ui>Creatives</Ui> tab.
   </Step>
   <Step title="Click Public Preview">
-    Click <Ui>Public Preview</Ui> in the top right. A modal opens showing all line items and their creatives.
+    Click <Ui>Public Preview</Ui> in the top right. A window opens showing all line items and their creatives.
   </Step>
   <Step title="Select what to include">
     Use <Ui>Select All</Ui> to include every creative, or expand individual line items and tick the specific creatives you want to share. You can mix and match across line items.
   </Step>
   <Step title="Generate the link">
-    Click <Ui>Generate Link</Ui>. A shareable URL is produced — copy it and send it to the advertiser by email or any other channel.
+    Click <Ui>Generate Link</Ui>, then copy the URL and send it to your approver.
   </Step>
 </Steps>
 
-<Note>
-  The link is accessible to anyone who has it — no login is required to view the preview. When the advertiser approves or rejects a creative with feedback, they are asked to provide their email address so you know who the response came from.
-</Note>
+---
+
+## What approvers see
+
+When an approver opens the link, they land on the **Creative Review** page. It shows your client branding and the campaign name, with creatives grouped by line item.
+
+- **Review Progress** at the top of the page shows how many creatives are approved, pending and rejected.
+- The <Ui>Desktop</Ui> and <Ui>Mobile</Ui> toggle on each creative lets the approver check how the ad looks on each device.
+- <Ui>Download as PDF</Ui> saves a copy of every creative in the preview, which is useful for approvers who need to share it internally.
+
+<Frame caption="The Creative Review page an approver sees when they open the link.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/public-preview-approver-page.png" alt="Creative Review page showing review progress, a creative preview, approver email field and Approve and Reject with feedback buttons" />
+</Frame>
+
+If approval and feedback is turned on, the approver enters their email address in **Approver Contact Email** and then clicks <Ui>Approve</Ui> or <Ui>Reject with feedback</Ui> under each creative. **Feedback** is optional when approving but required when rejecting. The page remembers their email address, so they only need to enter it once.
+
+Once they submit, the page confirms the decision and shows it under the creative with their email address, the time and any comment.
+
+<Frame caption="A submitted decision shows the approver's email, the time and their feedback.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/public-preview-approved.png" alt="Approved creative on the review page with the approver's email, timestamp and comment" />
+</Frame>
+
+Every approval or rejection triggers an in-app and email notification to the person who generated the link and to the line item's assignees.
+
+---
+
+## Track feedback with Public Preview History
+
+The **Public Preview History** section sits below the creatives table on the line item **Creatives** tab. Each entry shows who generated the preview and when, how many creatives it includes, and a running count of approved (green), pending (amber) and rejected (red) creatives.
+
+Expand an entry to see:
+
+- the preview link, with a **Copy** icon so you can resend it
+- every creative included in the preview
+- each approver's decision, with their email address and feedback
+
+If a creative has been edited since the link was shared, the entry flags it. Approvers are then looking at an out-of-date version, so generate a fresh link and resend it.
+
+<Frame caption="Public Preview History shows each link's progress and every approver's decision.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/public-preview-history.png" alt="Public Preview History section showing a preview entry with its link, included creatives and an approval with feedback" />
+</Frame>
+
+<Tip>
+  Check Public Preview History before a line item goes live to confirm every creative has been approved and nothing has changed since sign-off.
+</Tip>
 
 <Warning>
-  Do not share the link in public channels. Only send it to the intended recipient.
+  Anyone with the link can open the preview. Don't share it in public channels, and only send it to the intended recipients.
 </Warning>
