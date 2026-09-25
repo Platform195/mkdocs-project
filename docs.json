@@ -111,6 +111,12 @@
               "reference/glossary",
               "reference/support"
             ]
+          },
+          {
+            "group": "Changelog",
+            "pages": [
+              "changelog"
+            ]
           }
         ]
       },
