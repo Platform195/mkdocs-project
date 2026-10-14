@@ -1,0 +1,92 @@
+---
+title: "Manage connectors"
+description: "Connect advertising platforms and AI providers to Uplift Hub, and manage who owns each connection."
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+**Connectors** link Uplift Hub to the outside services it works with. There
+are two kinds:
+
+- **Advertising Connectors** activate line items on third-party ad platforms.
+- **Gen AI Connectors** choose the AI providers that power Uplift Hub's
+  [AI features](/client-configuration/ai-configuration) for your client.
+
+<Frame caption="The Connectors screen.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-connectors-list.png" alt="Connectors screen with Advertising Connectors and Gen AI Connectors sections" />
+</Frame>
+
+---
+
+## Add a connector
+
+<Steps>
+  <Step title="Open Connectors">
+    Select <Ui>Configuration</Ui> in the sidebar, then click the
+    <Ui>Connectors</Ui> tile.
+  </Step>
+  <Step title="Add a connector">
+    Click <Ui>Add Connector</Ui> in the top right.
+  </Step>
+  <Step title="Choose a service">
+    Find the service under **Advertising Connectors** or **Gen AI Connectors** —
+    use the search box to narrow the list — and click its tile. Gen AI options
+    include **Anthropic Claude**, **Google Gemini** and **OpenAI**.
+  </Step>
+  <Step title="Authorise the connection">
+    A secure sign-in page opens for that service. Follow the steps to sign in
+    or enter your API key, then return to Uplift Hub.
+  </Step>
+</Steps>
+
+<Frame caption="The New Connector dialog.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-connectors-new.png" alt="New Connector dialog listing Anthropic Claude, Google Gemini and OpenAI" />
+</Frame>
+
+<Note>
+  If **Advertising Connectors** shows `No integrations available`, no ad
+  platforms are enabled for your client yet. Contact your Platform 195
+  representative to enable one.
+</Note>
+
+---
+
+## Connector ownership
+
+Each connection belongs to the user who created it — its **owner**. Only the
+owner can manage or re-authenticate the connection, because it uses their
+credentials.
+
+---
+
+## Re-authenticate a connector
+
+A warning icon on a connector card means the connection needs attention — for
+example, an expired key or revoked access. If you're the owner, click
+<Ui>Re-authenticate</Ui> on the card and sign in again.
+
+<Warning>
+  Features that rely on a connector stop working until it's re-authenticated.
+  For a Gen AI connector, that includes the features listed on its card.
+</Warning>
+
+---
+
+## Rename, transfer or delete a connector
+
+Click the **⋮** menu on a connector card:
+
+- <Ui>Edit label</Ui> — change the **Connector Label** shown on the card.
+- <Ui>Transfer Ownership</Ui> — hand the connection to another user. Choose
+  the new owner in **Transfer to** and click <Ui>Save</Ui>. Ad accounts and
+  products are not affected.
+- <Ui>Delete</Ui> — remove the connection.
+
+<Frame caption="Transfer Ownership — pick the user who should own the connection.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-connectors-transfer-ownership.png" alt="Transfer ownership dialog with a Transfer to dropdown" />
+</Frame>
+
+<Tip>
+  Before someone who owns a connector leaves your team, transfer ownership to
+  another user so the connection can still be re-authenticated.
+</Tip>

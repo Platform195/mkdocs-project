@@ -11,7 +11,7 @@ Uplift Hub includes three roles designed for client users. Each role is scoped t
 
 | Role | Best for | Key distinction |
 | --- | --- | --- |
-| **ClientCampaignManager** | Client-side campaign leads | Full read/write access across campaigns, line items, and creatives — including adding campaigns and editing settings |
+| **ClientCampaignManager** | Client-side campaign leads | Full read/write access across campaigns, line items, and creatives — including adding campaigns, editing settings and managing client configuration |
 | **ClientOperativeRole** | Day-to-day client operators | Broad read access and the ability to submit comments and upload creatives, but no destructive or structural actions |
 | **SalesManager** | Client sales and account contacts | Dashboard and reporting visibility with limited write access — focused on oversight rather than operation |
 
@@ -19,7 +19,7 @@ Uplift Hub includes three roles designed for client users. Each role is scoped t
 
 ## ClientCampaignManager
 
-This role is designed for clients who take an active management role in their campaigns. They can create and configure campaigns, manage line items end-to-end, upload creatives, and access reporting — but they cannot access internal comments or administrative configuration.
+This role is designed for clients who take an active management role in their campaigns. They can create and configure campaigns, manage line items end-to-end, upload creatives, access reporting and manage [client configuration](/client-configuration/introduction) — but they cannot access internal comments.
 
 <AccordionGroup>
   <Accordion title="Dashboard">
@@ -83,10 +83,20 @@ This role is designed for clients who take an active management role in their ca
     - `hub.resources` — access resources
     - `hub.reporting` — access reporting
   </Accordion>
+
+  <Accordion title="Client configuration">
+    - Account types — add, rename and delete
+    - Platforms and channels — add, rename and delete
+    - Targeting presets — create, edit and delete line item and creative presets
+    - AI configuration — output defaults and generation parameters
+    - Connectors — add, re-authenticate, transfer and delete connectors
+
+    See [Client configuration](/client-configuration/introduction).
+  </Accordion>
 </AccordionGroup>
 
 <Note>
-  ClientCampaignManager cannot access internal comments (`hub.campaign.comments.internal`) or any administrative configuration.
+  ClientCampaignManager cannot access internal comments (`hub.campaign.comments.internal`). It is the only client role with access to **Configuration**.
 </Note>
 
 ---

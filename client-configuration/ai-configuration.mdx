@@ -1,0 +1,132 @@
+---
+title: "Configure AI"
+description: "Set the language, tone of voice and model settings Uplift Hub uses to generate copy, briefs and translations."
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+**AI Configuration** controls how Uplift Hub's AI features write for your
+client — creative copy, line item and campaign briefs, audience descriptions
+and translations. Set your brand's language and tone once, and every
+AI-generated suggestion follows it.
+
+The screen has three tabs: **AI Providers**, **Output Defaults** and
+**Generation Parameters**.
+
+---
+
+## AI Providers
+
+The **AI Providers** tab lists the AI services connected to your client and
+which features each one powers.
+
+<Frame caption="The AI Providers tab — each card lists the features that provider powers.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-ai-providers.png" alt="AI Providers tab showing an OpenAI provider card" />
+</Frame>
+
+To add a provider, click <Ui>Add Provider</Ui>. This takes you to
+[Connectors](/client-configuration/connectors), where you connect a new
+**Gen AI Connector**.
+
+---
+
+## Set your output defaults
+
+**Output Defaults** apply to everything the AI writes for your client.
+
+<Steps>
+  <Step title="Open Output Defaults">
+    Select <Ui>Configuration</Ui> in the sidebar, click
+    <Ui>AI Configuration</Ui>, then click the <Ui>Output Defaults</Ui> tab.
+  </Step>
+  <Step title="Choose a language">
+    Pick the **Default Output Language** — for example `English`, `German` or
+    `French`.
+  </Step>
+  <Step title="Describe your tone of voice">
+    In **Tone of Voice**, describe how your brand should sound — style,
+    formality, what to lead with and what to avoid.
+  </Step>
+  <Step title="Save">
+    Click <Ui>Save Changes</Ui>.
+  </Step>
+</Steps>
+
+<Frame caption="Output Defaults — the default language and a tone of voice description.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-ai-output-defaults.png" alt="Output Defaults tab with language dropdown and tone of voice text" />
+</Frame>
+
+<Tip>
+  The more specific your tone of voice, the better the results. Include the
+  English variant (British or American), example phrases and calls to action,
+  and anything to avoid — such as jargon, exaggerated superlatives or
+  competitor mentions.
+</Tip>
+
+---
+
+## Tune generation parameters
+
+**Generation Parameters** lets you fine-tune each AI feature separately. Each
+feature has its own collapsible section:
+
+- **Creative Copy Generation**
+- **Line Item Briefs**
+- **Campaign Briefs**
+- **Audience Descriptions**
+- **Translation**
+
+<Frame caption="Generation Parameters for Creative Copy Generation.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-ai-generation-parameters.png" alt="Generation Parameters tab showing provider, model, max tokens, temperature and system prompt" />
+</Frame>
+
+| Setting | What it does |
+| --- | --- |
+| **Provider** | The connected AI provider used for this feature. |
+| **Model** | The provider's model. Newer, larger models usually write better but can be slower. |
+| **Max Tokens** | Limits how long the response can be. Higher limits allow more detail but take longer to generate. |
+| **Temperature** | Controls how creative or predictable the response is, from `0` (most predictable) to `1` (most creative). |
+| **System Prompt** | Instructions the AI follows for every response in this feature. |
+
+### Use placeholders in the system prompt
+
+The system prompt can include placeholders that Uplift Hub fills in for each
+request — for example `{{Client.Name}}`, `{{Account.Name}}` and
+`{{Product.Name}}`:
+
+```text
+You are a performance copywriter for {{Client.Name}} writing {{Product.Name}}
+copy for {{Account.Name}}. Respect the character limit for the field. Return
+options only, no commentary.
+```
+
+### Test before you save
+
+<Steps>
+  <Step title="Adjust the settings">
+    Expand a feature and change its model, temperature or system prompt.
+  </Step>
+  <Step title="Run a test">
+    In **Test Prompt**, click <Ui>Generate 3 Options</Ui>. Uplift Hub sends a
+    real request using that feature's current settings and shows three
+    suggestions.
+  </Step>
+  <Step title="Save">
+    When you're happy with the results, click <Ui>Save Changes</Ui> in the top
+    right.
+  </Step>
+</Steps>
+
+<Frame caption="Test Prompt and the other AI features, each in its own section.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-ai-test-prompt.png" alt="Test Prompt panel with Generate 3 Options button and collapsed feature sections" />
+</Frame>
+
+<Note>
+  Switching to a different feature resets the test conversation.
+</Note>
+
+<Tip>
+  Use a low temperature (around `0.2`–`0.4`) for briefs and translations, where
+  accuracy matters, and a higher one (around `0.7`–`0.8`) for creative copy,
+  where you want more variety.
+</Tip>

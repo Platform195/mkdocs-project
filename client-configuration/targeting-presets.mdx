@@ -1,0 +1,112 @@
+---
+title: "Create targeting presets"
+description: "Save reusable targeting rules for line items and value lists for creatives."
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+**Targeting presets** save targeting you use again and again, so your team
+doesn't have to retype the same key-value rules on every line item. There are
+two kinds, each on its own tab:
+
+- **Line Item Presets** — key-value targeting rules for line items.
+- **Creative Presets** — a named list of values for creatives.
+
+<Frame caption="The Line Item Presets tab.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-line-items.png" alt="Line item presets list with search, Add Preset button and pagination" />
+</Frame>
+
+---
+
+## Create a line item preset
+
+<Steps>
+  <Step title="Open Targeting Presets">
+    Select <Ui>Configuration</Ui> in the sidebar, then click the
+    <Ui>Targeting Presets</Ui> tile. The **Line Item Presets** tab opens.
+  </Step>
+  <Step title="Add a preset">
+    Click <Ui>Add Preset</Ui> in the top right.
+  </Step>
+  <Step title="Name it">
+    Enter a **Name** your team will recognise, such as `UK dealers 2026`.
+  </Step>
+  <Step title="Enter the values">
+    Type your targeting rules in **Values** using the format below (up to 500
+    characters). The **Preview** shows how Uplift Hub reads them.
+  </Step>
+  <Step title="Save">
+    Click <Ui>Create Preset</Ui>.
+  </Step>
+</Steps>
+
+<Frame caption="The Create Line Item Preset dialog.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-new-line-item.png" alt="Create Line Item Preset dialog with name, values and preview" />
+</Frame>
+
+### How to write values
+
+Each rule is a `key=value` pair.
+
+- **Commas on the same line** combine rules with **AND** — every rule on that
+  line must match.
+- **A new line** starts another group, combined with **OR** — any one line can
+  match.
+
+For example:
+
+```text
+dealerid=393728,dealerid=396933
+year=2000
+```
+
+reads as `(dealerid=393728 AND dealerid=396933) OR (year=2000)`.
+
+<Frame caption="A saved preset — the Preview confirms how the rules combine.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-example.png" alt="Edit Line Item Preset dialog showing values and the AND/OR preview" />
+</Frame>
+
+<Tip>
+  Always check the **Preview** before you save. If a group should match *any*
+  of several values, put each value on its own line rather than separating them
+  with commas.
+</Tip>
+
+---
+
+## Create a creative preset
+
+<Steps>
+  <Step title="Open the Creative Presets tab">
+    On the **Targeting Presets** screen, click the <Ui>Creative Presets</Ui> tab.
+  </Step>
+  <Step title="Add a preset">
+    Click <Ui>Add Preset</Ui>.
+  </Step>
+  <Step title="Fill in the details">
+    Enter a **Name** and choose an **Array Type** — `String` for text values or
+    `Number` for numeric values. Add the **Values** (up to 500 characters).
+  </Step>
+  <Step title="Save">
+    Click <Ui>Create Preset</Ui>.
+  </Step>
+</Steps>
+
+<Frame caption="The Create Creative Preset dialog.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-new-creative.png" alt="Create Creative Preset dialog with name, array type and values" />
+</Frame>
+
+---
+
+## Edit or delete a preset
+
+- **Edit** — click the preset's name, make your changes and click
+  <Ui>Save Preset</Ui>.
+- **Delete** — click the **⋮** menu at the end of the row and select
+  <Ui>Delete</Ui>.
+
+Use the search box to find a preset by name, and sort by **Name** or
+**Last Updated On**.
+
+See [Targeting & keywords](/line-items/targeting) for how targeting works on
+a line item.

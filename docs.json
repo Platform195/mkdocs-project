@@ -62,6 +62,18 @@
             ]
           },
           {
+            "group": "Client configuration",
+            "pages": [
+              "client-configuration/introduction",
+              "client-configuration/account-types",
+              "client-configuration/platforms",
+              "client-configuration/channels",
+              "client-configuration/targeting-presets",
+              "client-configuration/ai-configuration",
+              "client-configuration/connectors"
+            ]
+          },
+          {
             "group": "Editing line items",
             "pages": [
               "line-items/assignees-rates",

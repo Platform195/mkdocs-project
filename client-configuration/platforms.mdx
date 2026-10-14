@@ -1,0 +1,59 @@
+---
+title: "Manage platforms"
+description: "Add, rename and delete the platforms your products are delivered on."
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+**Platforms** are where your products run — for example `On-site`, `Social`
+or `Direct`. Each product is linked to a platform, and the platform shows on
+line items so everyone can see where an ad will appear.
+
+<Frame caption="The Platforms list. The ID column is assigned automatically.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-platforms-list.png" alt="Platforms list showing Traveller+, On-site, Direct and Social with IDs" />
+</Frame>
+
+---
+
+## Add a platform
+
+<Steps>
+  <Step title="Open Platforms">
+    Select <Ui>Configuration</Ui> in the sidebar, then click the
+    <Ui>Platforms</Ui> tile.
+  </Step>
+  <Step title="Add a new platform">
+    Click <Ui>Add platform</Ui> in the top right.
+  </Step>
+  <Step title="Name it">
+    Enter a **Platform Name**, then click <Ui>Create Platform</Ui>. Uplift Hub
+    assigns the platform an **ID**.
+  </Step>
+</Steps>
+
+<Frame caption="The New Platform dialog.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-platforms-new.png" alt="New Platform dialog with a name field" />
+</Frame>
+
+---
+
+## Rename a platform
+
+Click the platform's name in the list. Update the **Platform Name** and click
+<Ui>Save Platform</Ui>.
+
+---
+
+## Delete a platform
+
+Click the **⋮** menu at the end of the row and select <Ui>Delete</Ui>.
+
+<Warning>
+  Products linked to a platform keep pointing at it. Move those products to
+  another platform before you delete it.
+</Warning>
+
+<Tip>
+  Quote the platform **ID** when you raise a support request or match Uplift Hub
+  data against an export — it stays the same even if you rename the platform.
+</Tip>

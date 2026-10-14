@@ -1,0 +1,104 @@
+---
+title: "Manage statuses"
+description: "Add custom campaign statuses, set their colour and icon, and change their order."
+hidden: true
+noindex: true
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+**Statuses** control the stages a campaign or line item moves through, and how
+each stage looks in tables, boards and status pills. You can add your own
+campaign statuses to match how your team works — for example a
+`Contact Initiated` or `PCR Ready` stage. Line item statuses are fixed.
+
+<Frame caption="The Statuses screen. Custom statuses show reorder and menu controls on the right.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-statuses-list.png" alt="Campaign Statuses table with status, icon and colour columns" />
+</Frame>
+
+---
+
+## Built-in and custom statuses
+
+The **Campaign Statuses** table lists every campaign status in the order it
+appears across Uplift Hub.
+
+- **Built-in statuses** — such as `Upcoming`, `Live`, `Complete`, `Paused` and
+  `Archived` — drive the platform's workflow. You can't edit, move or delete them.
+- **Custom statuses** are ones your team has added. They show
+  <Ui>↑</Ui> <Ui>↓</Ui> and **⋮** controls at the end of the row.
+
+---
+
+## Add a campaign status
+
+<Steps>
+  <Step title="Open Statuses">
+    Select <Ui>Configuration</Ui> in the sidebar, then click the
+    <Ui>Statuses</Ui> tile.
+  </Step>
+  <Step title="Add a status">
+    Click <Ui>Add Status</Ui> above the **Campaign Statuses** table.
+  </Step>
+  <Step title="Fill in the details">
+    Enter a **New Status Name**, choose a **New Status Colour** and pick an
+    **Icon**. Click <Ui>Save</Ui>.
+  </Step>
+  <Step title="Position it">
+    Use the <Ui>↑</Ui> and <Ui>↓</Ui> buttons to move the status to the right
+    place in the workflow, then click <Ui>Save changes</Ui> in the top right.
+  </Step>
+</Steps>
+
+<Frame caption="The New Status dialog.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-statuses-new.png" alt="New Status dialog with name, colour, icon and preview" />
+</Frame>
+
+### Colours
+
+Choose from `White`, `Yellow`, `Neutral-3`, `Neutral-4`, `Orange`, `Cyan`,
+`Teal`, `Critical`, `Blue`, `Red`, `Green` and `Purple`.
+
+<Tip>
+  Pick a colour and icon close to the built-in status your new stage sits next
+  to — for example, a progress icon for an in-between stage — so the board and
+  timeline views stay easy to scan.
+</Tip>
+
+---
+
+## Edit or delete a custom status
+
+Click the **⋮** menu at the end of a custom status row:
+
+- <Ui>Edit</Ui> — change the name, colour or icon, then click <Ui>Save</Ui>.
+- <Ui>Delete</Ui> — remove the status.
+
+<Warning>
+  Move any campaigns out of a status before you delete it, so they don't end up
+  without a valid stage.
+</Warning>
+
+---
+
+## Line item statuses
+
+The **Line Item Statuses** table shows the fixed workflow every line item
+follows. You can view it here but not change it.
+
+In order, the line item statuses are:
+
+1. `Reserved`
+2. `Ready for Production`
+3. `In Production`
+4. `Ready For Approval`
+5. `Approved`
+6. `Ready to Go Live`
+7. `Live`
+8. `Evidence Ready`
+9. `Complete`
+10. `Paused`
+11. `Archived`
+
+See [Go-live workflow](/going-live/workflow) for how line items move to
+`Live`.

@@ -1,0 +1,112 @@
+---
+title: "Manage packages"
+description: "Build predefined bundles of products that generate line items automatically when you create a Package campaign."
+hidden: true
+noindex: true
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+A **package** is a predefined bundle of products sold together. When someone
+creates a **Package** campaign, Uplift Hub generates the line items for every
+product in the package automatically. Set packages up here so your team can
+sell them consistently. See [Package vs Custom](/setup/create-campaign#package-vs-custom)
+for how packages work on a campaign.
+
+<Frame caption="The Packages list.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-packages-list.png" alt="Packages list with package name, budget and package type" />
+</Frame>
+
+---
+
+## Create a package
+
+<Steps>
+  <Step title="Open Packages">
+    Select <Ui>Configuration</Ui> in the sidebar, then click the
+    <Ui>Packages</Ui> tile.
+  </Step>
+  <Step title="Add a package">
+    Click <Ui>Add Package</Ui> in the top right.
+  </Step>
+  <Step title="Enter the details">
+    Enter a **Package Name**, choose a **Package Type** (see below) and enter
+    the **Budget**.
+  </Step>
+  <Step title="Set the self-serve tier (optional)">
+    If the package is sold as a self-serve option, choose a **Self Serve
+    Package** — `Core`, `Core+` or `Premium`.
+  </Step>
+  <Step title="Save">
+    Click <Ui>Save</Ui>, then open the package from the list to add its products.
+  </Step>
+</Steps>
+
+<Frame caption="The New Package dialog.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-packages-new.png" alt="New Package dialog with name, package type, budget and self serve fields" />
+</Frame>
+
+### Fixed or blended
+
+| Package type | How it works |
+| --- | --- |
+| **Fixed** | Set a quantity and rate for each product. The package's total budget and quantity are added up from all its products. |
+| **Blended** | Set one total budget and quantity, then split them across products by percentage share. Every product is charged at the same blended rate. |
+
+---
+
+## Add products to a package
+
+<Steps>
+  <Step title="Open the package">
+    Click the package name in the **Packages** list. The **Details** tab opens.
+  </Step>
+  <Step title="Select a product">
+    Under **Products**, use the <Ui>Select a Product</Ui> dropdown to add each
+    product in the bundle.
+  </Step>
+  <Step title="Set quantities and rates">
+    Enter the **Quantity** and **Rate** for each product. The **Budget** column
+    and the package's **Total Commitment** update as you go.
+  </Step>
+  <Step title="Save">
+    Click <Ui>Save Changes</Ui> in the top right.
+  </Step>
+</Steps>
+
+<Frame caption="A package's Details tab — package settings at the top, products below.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-packages-details.png" alt="Package details with name, type, budget, total commitment and a products table" />
+</Frame>
+
+To remove a product, click the **⋮** menu at the end of its row and select
+<Ui>Delete</Ui>.
+
+---
+
+## See campaigns using a package
+
+The **Campaigns** section at the bottom of the **Details** tab lists every
+campaign sold with this package, with its status, account, dates and budget.
+
+- Click <Ui>Add Campaign</Ui> to add a campaign to the package.
+- Click the arrow next to <Ui>Add Campaign</Ui> and select <Ui>Export CSV</Ui>
+  to download the list.
+
+<Frame caption="Campaigns sold with this package.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-packages-campaigns.png" alt="Campaigns table on a package with search, view toggles and Add Campaign" />
+</Frame>
+
+---
+
+## Package tabs
+
+| Tab | What it's for |
+| --- | --- |
+| **Details** | Package name, type, budget, products and linked campaigns. |
+| **Self Serve** | The self-serve tier (`Core`, `Core+` or `Premium`) the package belongs to. |
+| **History** | Who changed the package and when. |
+| **Settings** | Delete the package. |
+
+<Warning>
+  Deleting a package from the **Settings** tab can't be undone.
+</Warning>
