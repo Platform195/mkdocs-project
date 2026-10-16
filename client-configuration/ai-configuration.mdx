@@ -6,9 +6,9 @@ description: "Set the language, tone of voice and model settings Uplift Hub uses
 import { Ui } from "/snippets/ui.mdx";
 
 **AI Configuration** controls how Uplift Hub's AI features write for your
-client — creative copy, line item and campaign briefs, audience descriptions
-and translations. Set your brand's language and tone once, and every
-AI-generated suggestion follows it.
+advertisers — creative copy, line item and campaign briefs, audience
+descriptions and translations. Set the language and tone of voice once, and
+every AI-generated suggestion follows it.
 
 The screen has three tabs: **AI Providers**, **Output Defaults** and
 **Generation Parameters**.
@@ -32,7 +32,7 @@ To add a provider, click <Ui>Add Provider</Ui>. This takes you to
 
 ## Set your output defaults
 
-**Output Defaults** apply to everything the AI writes for your client.
+**Output Defaults** apply to everything the AI writes for your advertisers.
 
 <Steps>
   <Step title="Open Output Defaults">
@@ -43,9 +43,9 @@ To add a provider, click <Ui>Add Provider</Ui>. This takes you to
     Pick the **Default Output Language** — for example `English`, `German` or
     `French`.
   </Step>
-  <Step title="Describe your tone of voice">
-    In **Tone of Voice**, describe how your brand should sound — style,
-    formality, what to lead with and what to avoid.
+  <Step title="Describe the tone of voice">
+    In **Tone of Voice**, describe how copy for your advertisers should sound —
+    style, formality, what to lead with and what to avoid.
   </Step>
   <Step title="Save">
     Click <Ui>Save Changes</Ui>.
@@ -88,17 +88,116 @@ feature has its own collapsible section:
 | **Temperature** | Controls how creative or predictable the response is, from `0` (most predictable) to `1` (most creative). |
 | **System Prompt** | Instructions the AI follows for every response in this feature. |
 
-### Use placeholders in the system prompt
+### Add macros to the system prompt
 
-The system prompt can include placeholders that Uplift Hub fills in for each
-request — for example `{{Client.Name}}`, `{{Account.Name}}` and
-`{{Product.Name}}`:
+Macros are placeholders in double curly braces, such as `{{Account.Name}}`.
+When the AI runs, Uplift Hub swaps each macro for the real value from the
+record you're working on — the advertiser's name, the campaign dates, the
+product's ad spec and so on. Macros are what make suggestions specific to each
+advertiser and campaign instead of generic.
+
+<Steps>
+  <Step title="Place your cursor">
+    Click in the **System Prompt** where you want the value to appear.
+  </Step>
+  <Step title="Type two opening braces">
+    Type `{{`. A list of available macros opens below the prompt.
+  </Step>
+  <Step title="Pick a macro">
+    Select the macro you want. It's inserted into the prompt in the right
+    format.
+  </Step>
+  <Step title="Test and save">
+    Run a test with <Ui>Generate 3 Options</Ui> to check the values come
+    through, then click <Ui>Save Changes</Ui>.
+  </Step>
+</Steps>
+
+<Frame caption="Typing {{ in the System Prompt opens the macro list.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-ai-macro-picker.png" alt="System prompt with macros and the macro list open below it" />
+</Frame>
+
+#### Useful macros
+
+<AccordionGroup>
+  <Accordion title="Advertiser and client">
+    - `{{Account.Name}}` — the advertiser's account name
+    - `{{Account.CompanyName}}` — the advertiser's company name
+    - `{{Client.Name}}` — your company name
+    - `{{Client.CurrencySymbol}}` — your default currency symbol, for example `£`
+  </Accordion>
+  <Accordion title="Campaign">
+    - `{{Campaign.Name}}`, `{{Campaign.StartDate}}`, `{{Campaign.EndDate}}`
+    - `{{Campaign.CampaignBudget}}`
+    - `{{Campaign.CommercialMessaging}}` — the offer or key message
+    - `{{Campaign.CreativeFocus}}`
+    - `{{Campaign.CopyInclusions}}` — anything the copy must include
+    - `{{Campaign.CallToActionCopy}}` — the preferred call to action
+    - `{{Campaign.LandingPageURL}}`
+    - `{{Campaign.Notes}}`
+  </Accordion>
+  <Accordion title="Line item">
+    - `{{LineItem.LineItemName}}`, `{{LineItem.StartDate}}`, `{{LineItem.EndDate}}`
+    - `{{LineItem.Budget}}`
+    - `{{LineItem.Notes}}`
+  </Accordion>
+  <Accordion title="Product">
+    - `{{Product.Name}}` — the placement, for example `Homepage Hero`
+    - `{{Product.Description}}`
+    - `{{Product.FormatAdSpec}}` — the ad format and spec
+    - `{{Product.Notes}}` — product guidance
+  </Accordion>
+  <Accordion title="The field being written">
+    Use these so the AI knows exactly which field it's filling in and how long
+    the answer can be.
+
+    - **Campaign briefs:** `{{ClientCampaignBriefField.FieldName}}`,
+      `{{ClientCampaignBriefField.FieldDescription}}`,
+      `{{ClientCampaignBriefField.CharacterLimit}}`
+    - **Line item briefs:** `{{CreativeBriefField.FieldName}}`,
+      `{{CreativeBriefField.FieldDescription}}`,
+      `{{CreativeBriefField.CharacterLimit}}`
+  </Accordion>
+  <Accordion title="AI settings">
+    - `{{AIParameters.ToneOfVoice}}` — the tone of voice from **Output Defaults**
+    - `{{AIParameters.DefaultLanguage}}` — the default output language
+  </Accordion>
+</AccordionGroup>
+
+For example, a creative copy prompt might read:
 
 ```text
-You are a performance copywriter for {{Client.Name}} writing {{Product.Name}}
-copy for {{Account.Name}}. Respect the character limit for the field. Return
-options only, no commentary.
+You are a performance copywriter for {{Client.Name}}, writing ad copy for the
+{{Product.Name}} placement ({{Product.Description}}) on behalf of the
+advertiser {{Account.Name}}. Ad spec: {{Product.FormatAdSpec}}. Campaign:
+{{Campaign.Name}}, running {{Campaign.StartDate}} to {{Campaign.EndDate}}.
+Commercial messaging: {{Campaign.CommercialMessaging}}. Must include:
+{{Campaign.CopyInclusions}}. Preferred call to action:
+{{Campaign.CallToActionCopy}}. Respect the character limit for the field
+exactly. Return the copy only, with no quotes, labels or commentary.
 ```
+
+<Warning>
+  Only use macros that describe the advertiser, campaign, product or field.
+  The list also contains internal IDs and system settings — don't add these to
+  a prompt, because everything in the prompt is sent to your AI provider.
+</Warning>
+
+<Tip>
+  A macro is only as good as the data behind it. If a campaign field such as
+  **Commercial Messaging** is empty, the AI gets nothing for that macro — so
+  fill in the record first for the best results.
+</Tip>
+
+### Undo unsaved changes
+
+When you change a feature's settings, a banner shows that the configuration
+differs from the last saved version. Click <Ui>Reset</Ui> to go back to the
+last saved settings, or <Ui>Default</Ui> to restore the original defaults.
+
+<Frame caption="The unsaved-changes banner with Default and Reset.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-ai-unsaved-reset.png" alt="Banner reading 'This group's configuration has been changed from the last saved one' with Default and Reset links" />
+</Frame>
 
 ### Test before you save
 

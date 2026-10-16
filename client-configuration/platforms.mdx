@@ -1,17 +1,34 @@
 ---
 title: "Manage platforms"
-description: "Add, rename and delete the platforms your products are delivered on."
+description: "Set up the systems your ads are served or bought through, such as Uplift Ads, Meta or DV360."
 ---
 
 import { Ui } from "/snippets/ui.mdx";
+import PlatformVsChannel from "/snippets/platform-vs-channel.mdx";
 
-**Platforms** are where your products run — for example `On-site`, `Social`
-or `Direct`. Each product is linked to a platform, and the platform shows on
-line items so everyone can see where an ad will appear.
+A **platform** is the system an ad is served or bought through — for example
+`Uplift Ads` for ads on your own website, or `Meta` and `DV360` for paid media.
+It answers *what system runs this?*, not *where does it appear?* or *what kind
+of ad is it?*. Each product is linked to a platform, so you can report on
+delivery by the technology behind it.
+
+<PlatformVsChannel />
+
+---
+
+## Review your platform list
 
 <Frame caption="The Platforms list. The ID column is assigned automatically.">
-  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-platforms-list.png" alt="Platforms list showing Traveller+, On-site, Direct and Social with IDs" />
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-platforms-list.png" alt="Platforms list with names and IDs" />
 </Frame>
+
+<Note>
+  Many accounts were set up with properties in this list — names such as
+  `On-site` or an app name, which describe *where* an ad runs rather than the
+  system serving it. Check your list against the definitions above. If you
+  find properties here, talk to your Platform 195 representative before you
+  rename or delete them, as products and reports may already depend on them.
+</Note>
 
 ---
 

@@ -1,0 +1,170 @@
+---
+title: "Write with AI"
+description: "Use AI Generate to draft campaign briefs, line item briefs and creative copy, and translate creatives into other languages."
+---
+
+import { Ui } from "/snippets/ui.mdx";
+
+**AI Generate** drafts copy for you in the fields you already fill in — campaign
+briefs, line item briefs and creative components. It reads the rest of the brief
+for context and writes in the tone of voice set for your advertisers, so you start from a
+relevant draft instead of a blank box. You can also translate a creative's copy
+into another language in one go.
+
+Nothing the AI writes is saved until you choose a suggestion and click
+<Ui>Save changes</Ui>.
+
+---
+
+## Where you'll find it
+
+Look for the <Ui>AI Generate</Ui> button under a text field:
+
+| Where | Fields |
+| --- | --- |
+| **Campaign › Brief** | Campaign Objective, Target Audience, Key Message, Destinations / Products to Promote, Offer Details, Key Dates and Success KPIs |
+| **Line item › Brief** | Every line item brief field — for example Creative Objective, Headline Suggestions, Body Copy Guidance and Call to Action |
+| **Creative › Creative Components** | Copy fields such as headlines and CTAs, plus <Ui>Translate</Ui> for the whole creative |
+
+<Frame caption="AI Generate sits under each campaign brief field.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-campaign-brief-fields.png" alt="Campaign brief fields each with an AI Generate button" />
+</Frame>
+
+---
+
+## Generate copy for a field
+
+<Steps>
+  <Step title="Click AI Generate">
+    Click <Ui>AI Generate</Ui> under the field you want help with. The
+    **AI Generated Text** window opens and shows three suggestions after a few
+    seconds.
+  </Step>
+  <Step title="Compare the suggestions">
+    If the field already has text, it appears under **Current** so you can
+    compare. If the field is empty, the AI writes from scratch using the rest of
+    the brief.
+  </Step>
+  <Step title="Refine if needed">
+    Not quite right? Type an instruction in the box at the bottom — for example
+    `make it shorter` or `mention the £60pp deposit` — and click
+    <Ui>Refine</Ui>. New suggestions appear under your instruction. Refine as
+    many times as you like.
+  </Step>
+  <Step title="Apply a suggestion">
+    Click <Ui>Apply</Ui> next to the one you want. It replaces the text in the
+    field, and you can still edit it by hand.
+  </Step>
+  <Step title="Save">
+    Click <Ui>Save changes</Ui> to keep it.
+  </Step>
+</Steps>
+
+<Frame caption="Three suggestions for the Key Message, with the current text shown above for comparison.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-suggestions.png" alt="AI Generated Text window showing current text and three suggestions with Apply buttons" />
+</Frame>
+
+<Frame caption="After refining with 'Make it shorter: one sentence, under 15 words.'">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-refine.png" alt="Refined suggestion shown beneath the refine instruction" />
+</Frame>
+
+<Frame caption="An applied suggestion. The bar at the bottom shows there are unsaved changes.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-applied-unsaved.png" alt="Key Message field updated with the applied suggestion and a Save changes bar" />
+</Frame>
+
+<Note>
+  The conversation clears when you close the window. If you close it without
+  clicking <Ui>Apply</Ui>, the field stays as it was.
+</Note>
+
+---
+
+## Line item briefs
+
+Fill in the **campaign brief** first. A line item's **Brief** tab shows the
+campaign brief at the top, and the AI uses it when it writes the line item
+fields — so even an empty field like **Headline Suggestions** gets suggestions
+that match the campaign's offer and audience.
+
+<Frame caption="Headline suggestions for an empty line item field, written from the campaign brief.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-line-item-headlines.png" alt="Three headline suggestions for a Crete early booking line item" />
+</Frame>
+
+---
+
+## Creative copy
+
+On a creative, <Ui>AI Generate</Ui> sits under each copy field in
+**Creative Components**, next to <Ui>+ Add from source</Ui>. It works the same
+way as in the brief. Check that the suggestion fits the field's style and length
+— for example, a headline marked **Bold capitalised copy** — and use
+<Ui>Refine</Ui> to ask for it, such as `All capitals, under 30 characters`.
+
+<Frame caption="A creative copy field with AI Generate.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-creative-field.png" alt="Headline 1 field with Add from source and AI Generate buttons" />
+</Frame>
+
+---
+
+## Translate a creative
+
+<Steps>
+  <Step title="Open Translate">
+    On the creative, click <Ui>Translate</Ui> in the **Creative Components**
+    header.
+  </Step>
+  <Step title="Choose a language">
+    Pick a language in **Translate into**, then click <Ui>Translate again</Ui>.
+    Every copy component is translated at once.
+  </Step>
+  <Step title="Check the translations">
+    Each component shows the original above its translation, so you can check
+    them side by side.
+  </Step>
+  <Step title="Apply">
+    Click <Ui>Apply</Ui> on a single component, tick several and click
+    <Ui>Apply Selected</Ui>, or click <Ui>Apply All</Ui>. Then click
+    <Ui>Save changes</Ui>.
+  </Step>
+</Steps>
+
+<Frame caption="Translate Copy — originals and German translations side by side.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-translate.png" alt="Translate Copy window with German selected and translated headlines" />
+</Frame>
+
+<Frame caption="Each copy component — headline, CTA and offer text — is translated together.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/ai-generation-translate-all-components.png" alt="Translated CTA and offer text components with Apply buttons" />
+</Frame>
+
+<Warning>
+  Applying a translation replaces the original copy. If you need both
+  languages, select the creative on the line item's **Creatives** tab, click
+  <Ui>Duplicate</Ui>, then translate the copy.
+</Warning>
+
+<Tip>
+  Have a native speaker check translations before they go live — especially
+  prices, legal wording and whether the formal or informal "you" is used
+  consistently.
+</Tip>
+
+---
+
+## Getting better results
+
+- **Fill in the brief first.** The more context in the campaign brief — offer,
+  audience, dates — the more specific the suggestions.
+- **Be specific when you refine.** `Mention Crete and the 10% saving` works
+  better than `make it better`.
+- **Fill in the campaign details.** The AI pulls values such as the offer,
+  dates, call to action and landing page from the campaign and product using
+  macros. Empty fields mean less for it to work with — see
+  [Add macros to the system prompt](/client-configuration/ai-configuration#add-macros-to-the-system-prompt).
+- **Always review before you save.** AI suggestions can get facts wrong. Check
+  prices, dates and offer terms against the brief.
+
+<Note>
+  Suggestions follow the tone of voice and language set in
+  [AI configuration](/client-configuration/ai-configuration). If they don't
+  sound right for your advertisers, ask your ClientCampaignManager to update it.
+</Note>

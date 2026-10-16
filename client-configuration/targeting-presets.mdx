@@ -12,6 +12,12 @@ two kinds, each on its own tab:
 - **Line Item Presets** — key-value targeting rules for line items.
 - **Creative Presets** — a named list of values for creatives.
 
+<Warning>
+  Targeting presets only apply to **on-site** activity — ads served on your own
+  website or app through Uplift Ads. They have no effect on line items that run
+  on third-party platforms such as Meta or DV360.
+</Warning>
+
 <Frame caption="The Line Item Presets tab.">
   <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-line-items.png" alt="Line item presets list with search, Add Preset button and pagination" />
 </Frame>
@@ -29,7 +35,7 @@ two kinds, each on its own tab:
     Click <Ui>Add Preset</Ui> in the top right.
   </Step>
   <Step title="Name it">
-    Enter a **Name** your team will recognise, such as `UK dealers 2026`.
+    Enter a **Name** your team will recognise, such as `Luxury long-haul sun`.
   </Step>
   <Step title="Enter the values">
     Type your targeting rules in **Values** using the format below (up to 500
@@ -53,18 +59,24 @@ Each rule is a `key=value` pair.
 - **A new line** starts another group, combined with **OR** — any one line can
   match.
 
-For example:
+For example, to target visitors looking at five-star Dubai holidays *or* any
+Maldives holiday:
 
 ```text
-dealerid=393728,dealerid=396933
-year=2000
+dest=dubai,stars=5
+dest=maldives
 ```
 
-reads as `(dealerid=393728 AND dealerid=396933) OR (year=2000)`.
+reads as `(dest=dubai AND stars=5) OR (dest=maldives)`.
 
-<Frame caption="A saved preset — the Preview confirms how the rules combine.">
-  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-example.png" alt="Edit Line Item Preset dialog showing values and the AND/OR preview" />
+<Frame caption="The Preview confirms how the rules combine.">
+  <img src="https://cdn-uplifthubs.s3.eu-west-2.amazonaws.com/Documentation/client-config-targeting-presets-example.png" alt="Create Line Item Preset dialog with travel targeting values and the AND/OR preview" />
 </Frame>
+
+<Note>
+  Use the keys and values set up for your account — see
+  [Targeting & keywords](/line-items/targeting). The keys above are examples.
+</Note>
 
 <Tip>
   Always check the **Preview** before you save. If a group should match *any*
